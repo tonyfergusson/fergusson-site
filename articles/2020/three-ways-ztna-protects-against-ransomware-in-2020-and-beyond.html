@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Ways ZTNA Protects Against Ransomware — Tony Fergusson</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px}
+@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1)}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.article-header{padding:4rem 2rem 2rem;max-width:760px;margin:0 auto;border-bottom:0.5px solid var(--border)}
+.label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
+.article-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.5rem}
+.article-meta time{font-size:13px;color:var(--text-tertiary)}
+.article-body{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.article-body p{font-size:17px;line-height:1.8;color:var(--text-secondary);margin-bottom:1.5rem}
+.article-body h2{font-size:22px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:13px;color:var(--text-tertiary);text-decoration:none;margin-top:3rem;padding-top:2rem;border-top:0.5px solid var(--border)}
+.back-link:hover{color:var(--text-primary)}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-header,.article-body{padding-left:1rem;padding-right:1rem}}
+</style>
+</head>
+<body>
+<nav><a class="nav-name" href="/" style="text-decoration:none;color:inherit">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
+<div class="article-header">
+  <p class="label">Cloud Security · Cyber-Security</p>
+  <h1>Three Ways ZTNA Protects Against Ransomware in 2020 … and Beyond</h1>
+  <div class="article-meta"><time datetime="2020-02-14">14 Feb 2020</time></div>
+</div>
+<div class="article-body">
+<p>Ransomware is now using popular remote access VPNs as a Trojan horse to gain access to enterprise networks. This is a serious problem for IT teams being asked to enable mobility while keeping infrastructure secure. The technology they invested in to protect the business has become a liability.</p>
+<h2>1. No network, no lateral movement</h2>
+<p>ZTNA never puts users on the network. Instead, users are connected directly to specific applications — never to the underlying network segment. Ransomware that gains a foothold through a user device has nowhere to go. It cannot scan the network, cannot reach other systems, cannot spread.</p>
+<h2>2. Least-privilege application access</h2>
+<p>ZTNA grants access based on identity, device posture, and application policy — not IP ranges. Even if a user is compromised, the blast radius is contained to the applications that user was authorised to access.</p>
+<h2>3. The VPN attack surface disappears</h2>
+<p>VPN concentrators are internet-facing infrastructure with known vulnerabilities. They are a primary target for ransomware operators. ZTNA eliminates this attack surface entirely: there is no VPN endpoint to attack, no open port to probe, no gateway to compromise.</p>
+<p><a href="https://info.zscaler.com/webinar-three-ways-ztna-protects-against-ransomware">Watch the full webinar recording →</a></p>
+<a class="back-link" href="/articles/">← All writing</a>
+</div>
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+</body>
+</html>

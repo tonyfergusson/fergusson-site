@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComputerWorld Interview — Tony Fergusson</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px}
+@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1)}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.article-header{padding:4rem 2rem 2rem;max-width:760px;margin:0 auto;border-bottom:0.5px solid var(--border)}
+.label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
+.article-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.5rem}
+.article-meta time{font-size:13px;color:var(--text-tertiary)}
+.article-body{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.article-body p{font-size:17px;line-height:1.8;color:var(--text-secondary);margin-bottom:1.5rem}
+.article-body h2{font-size:22px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px;font-weight:500;color:var(--text-primary);margin:2rem 0 0.75rem}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body ul{margin:1rem 0 1.5rem 1.5rem;color:var(--text-secondary)}
+.article-body li{font-size:17px;line-height:1.8;margin-bottom:0.5rem}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:13px;color:var(--text-tertiary);text-decoration:none;margin-top:3rem;padding-top:2rem;border-top:0.5px solid var(--border)}
+.back-link:hover{color:var(--text-primary)}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-header,.article-body{padding-left:1rem;padding-right:1rem}}
+</style>
+</head>
+<body>
+<nav><a class="nav-name" href="/" style="text-decoration:none;color:inherit">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
+<div class="article-header">
+  <p class="label">Cloud Security</p>
+  <h1>ComputerWorld Interview: How MAN Energy Solutions Protects Against Hackers</h1>
+  <div class="article-meta"><time datetime="2019-10-21">21 Oct 2019</time></div>
+</div>
+<div class="article-body">
+<p>ComputerWorld Denmark covered how MAN Energy Solutions built one of Europe’s most advanced Zero Trust security architectures — protecting 15,000 employees across 140 countries without a traditional perimeter.</p>
+<p>The article explores the architectural decisions behind the transformation: why MAN moved away from VPN, how Zscaler Private Access made private applications invisible to the internet, and what the outcomes were in terms of security posture, user experience, and operational overhead.</p>
+<p>Key themes from the interview:</p>
+<ul>
+<li><strong>The perimeter is dead.</strong> With users everywhere and applications in the cloud, there is no perimeter left to defend.</li>
+<li><strong>Identity is the new perimeter.</strong> Access decisions must be based on who you are, what device you’re on, and what you’re trying to reach — not where you are on the network.</li>
+<li><strong>Invisible infrastructure.</strong> Private applications should have no internet presence. No open ports, no attack surface, no way for adversaries to reach them without valid authorisation.</li>
+<li><strong>Zero Trust is not a product.</strong> It is an architecture philosophy that requires commitment across networking, security, identity, and application teams.</li>
+</ul>
+<p><a href="https://www.computerworld.dk/art/248956/saadan-beskytter-man-energy-solutions-sig-effektivt-mod-hackere-alle-data-holdes-skjult">Read the full article in ComputerWorld (Danish) →</a></p>
+<a class="back-link" href="/articles/">← All writing</a>
+</div>
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+</body>
+</html>
