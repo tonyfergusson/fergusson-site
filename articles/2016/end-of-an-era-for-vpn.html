@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End of an Era for VPN? — Tony Fergusson</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px}
+@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1)}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.article-header{padding:4rem 2rem 2rem;max-width:760px;margin:0 auto;border-bottom:0.5px solid var(--border)}
+.label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
+.article-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.5rem}
+.article-meta time{font-size:13px;color:var(--text-tertiary)}
+.article-body{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.article-body p{font-size:17px;line-height:1.8;color:var(--text-secondary);margin-bottom:1.5rem}
+.article-body h2,.article-body h3,.article-body h4{font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h2{font-size:22px}.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;color:var(--text-secondary)}
+.article-body li{font-size:17px;line-height:1.8;margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body img{max-width:100%;border-radius:var(--radius);margin:2rem 0}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:13px;color:var(--text-tertiary);text-decoration:none;margin-top:3rem;padding-top:2rem;border-top:0.5px solid var(--border)}
+.back-link:hover{color:var(--text-primary)}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-header,.article-body{padding-left:1rem;padding-right:1rem}}
+</style>
+</head>
+<body>
+<nav><a class="nav-name" href="/" style="text-decoration:none;color:inherit">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
+<div class="article-header">
+  <p class="label">Networking · Security</p>
+  <h1>End of an Era for VPN?</h1>
+  <div class="article-meta"><time datetime="2016-09-01">01 Sep 2016</time></div>
+</div>
+<div class="article-body">
+<p>The legacy method of granting users access to applications in the enterprise is to extend the network perimeter to the client. This is achieved by routing the traffic between the client and the network edge in one secure tunnel. This approach poses a security risk as the user usually has full access to all network resources and applications.</p>
+<p>The next problem with legacy VPNs is that it is based on Layer 3. This means your security policies are based on IP information, for example Access Control Lists (ACLs). These ACLs become increasingly complex to manage as the number of applications grows. The network team spends considerable time maintaining firewall and ACL rules just to ensure that users can access the applications they need to do their job.</p>
+<p>The solution to this is Zero Trust Network Access (ZTNA), sometimes called a Software Defined Perimeter (SDP). ZTNA removes the need to expose the network to the user — instead, the user is granted access to specific applications based on identity and context, not network location.</p>
+<p>This fundamentally changes the security posture: users can only see the applications they are authorised to access. The network becomes invisible, and lateral movement — a key technique in modern attacks — becomes impossible.</p>
+<p>Read the full article on <a href="https://cloudsecurityzero.wordpress.com/2016/09/01/end-of-an-era-for-vpn/">Cloud Security Zero</a>.</p>
+<a class="back-link" href="/articles/">← All writing</a>
+</div>
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+</body>
+</html>
