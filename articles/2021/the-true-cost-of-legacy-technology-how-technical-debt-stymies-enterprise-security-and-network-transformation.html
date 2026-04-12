@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The True Cost of Legacy Technology — Tony Fergusson</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px}
+@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1)}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.article-header{padding:4rem 2rem 2rem;max-width:760px;margin:0 auto;border-bottom:0.5px solid var(--border)}
+.label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
+.article-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.5rem}
+.article-meta time{font-size:13px;color:var(--text-tertiary)}
+.article-body{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+.article-body p{font-size:17px;line-height:1.8;color:var(--text-secondary);margin-bottom:1.5rem}
+.article-body h2{font-size:22px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px;font-weight:500;color:var(--text-primary);margin:2rem 0 0.75rem}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body ul,.article-body ol{margin:1rem 0 1.5rem 1.5rem;color:var(--text-secondary)}
+.article-body li{font-size:17px;line-height:1.8;margin-bottom:0.5rem}
+.article-body blockquote{border-left:3px solid var(--border);padding-left:1.25rem;margin:2rem 0;font-style:italic;color:var(--text-secondary)}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:13px;color:var(--text-tertiary);text-decoration:none;margin-top:3rem;padding-top:2rem;border-top:0.5px solid var(--border)}
+.back-link:hover{color:var(--text-primary)}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-header,.article-body{padding-left:1rem;padding-right:1rem}}
+</style>
+</head>
+<body>
+<nav><a class="nav-name" href="/" style="text-decoration:none;color:inherit">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
+<div class="article-header">
+  <p class="label">Cloud Security</p>
+  <h1>The True Cost of Legacy Technology: How Technical Debt Stymies Enterprise Security and Network Transformation</h1>
+  <div class="article-meta"><time datetime="2021-05-02">02 May 2021</time></div>
+</div>
+<div class="article-body">
+<p>The first network message was sent over ARPANET in 1969. A few years later, <a href="https://en.wikipedia.org/wiki/Vint_Cerf">Vint Cerf</a> and <a href="https://en.wikipedia.org/wiki/Bob_Kahn">Bob Kahn</a> introduced the Internet Protocol — the foundation for modern network communication. In 1983, NetBIOS was created. In 1985, DNS. In 1991, the World Wide Web. These protocols are still running in enterprise networks today.</p>
+<p>The enterprise network was never designed for what it has become. It was designed for a world where applications lived in data centres, users sat at desks, and the perimeter was a physical boundary you could draw on a map. That world no longer exists.</p>
+<h2>The weight of technical debt</h2>
+<p>Technical debt is the accumulated cost of short-term decisions made under pressure. Every time an organisation chose to patch rather than replace, to work around rather than fix, to defer rather than invest — it added to the debt. The interest on that debt compounds.</p>
+<p>For enterprise networks, the debt is enormous. Routing protocols designed in the 1980s. Firewall rule sets with thousands of entries that nobody fully understands. VPN concentrators held together with hope and maintenance contracts. MPLS circuits that cost ten times more than their cloud equivalents and deliver a fraction of the performance.</p>
+<p>The true cost of this legacy is not the licensing and support fees — though those are significant. The true cost is <strong>what it prevents you from doing</strong>. Legacy infrastructure is the anchor that holds digital transformation in place.</p>
+<h2>Security debt is the most dangerous kind</h2>
+<p>Network technical debt has a direct security consequence. Old protocols have known vulnerabilities. Unpatched systems are attack surfaces. Complex firewall rules hide misconfigurations. Flat networks enable lateral movement. VPNs expose the entire network to anyone who compromises a credential.</p>
+<p>Ransomware operators understand this better than most CISOs. They have detailed knowledge of the vulnerabilities in legacy infrastructure. They know which VPN products have unpatched CVEs. They know how to move laterally through flat networks. They know that most organisations have not fully segmented their environments.</p>
+<p>The Colonial Pipeline attack. The SolarWinds compromise. The Microsoft Exchange vulnerabilities. In each case, legacy architecture — infrastructure that was never designed to withstand modern threats — was a critical enabling factor.</p>
+<h2>The transformation imperative</h2>
+<p>The answer is not incremental improvement. Patching a 30-year-old protocol does not make it secure — it just delays the reckoning. The answer is architectural transformation: replacing legacy infrastructure with cloud-native, Zero Trust architecture designed for the world we actually live in.</p>
+<p>This is hard. It requires budget, commitment, and the willingness to accept short-term disruption for long-term security. It requires organisations to make peace with the fact that the infrastructure they spent decades building is now a liability.</p>
+<p>But the alternative is worse. Every year of delay is another year of compounding debt. Another year of attack surface that adversaries can exploit. Another year of architecture that constrains the business rather than enabling it.</p>
+<h2>Where to start</h2>
+<p>The transformation does not have to happen overnight. But it does have to start. The most effective approach is to identify the highest-risk legacy components — typically VPN infrastructure and flat network segments — and begin replacing them with Zero Trust Network Access and microsegmentation.</p>
+<p>Start with the applications that matter most. Prove the model. Then expand. The goal is not to rip out everything at once, but to establish a new architectural direction and move consistently toward it.</p>
+<p>The organisations that do this successfully share a common characteristic: leadership that understands that <strong>security transformation is not an IT project, it is a business imperative</strong>. When the CISO and CIO have the mandate and the budget to transform — not just maintain — the results follow.</p>
+<a class="back-link" href="/articles/">← All writing</a>
+</div>
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+</body>
+</html>
