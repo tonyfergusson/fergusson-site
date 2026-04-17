@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Tony Fergusson</title>
+<meta name="description" content="Speaking engagements and events — Tony Fergusson.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px}
+@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.page-header{padding:4rem 2rem 2rem;max-width:860px;margin:0 auto;border-bottom:0.5px solid var(--border)}
+.label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
+.page-header h1{font-size:clamp(24px,4vw,36px);font-weight:500;line-height:1.2;margin-bottom:0.75rem}
+.page-header p{font-size:16px;color:var(--text-secondary)}
+.gallery-section{padding:3rem 2rem;max-width:860px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+.gallery-item{position:relative;overflow:hidden;border-radius:var(--radius);border:0.5px solid var(--border);background:var(--bg-secondary);aspect-ratio:4/3;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s ease}
+.gallery-item:hover img{transform:scale(1.03)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,0.55));color:#fff;font-size:13px;opacity:0;transition:opacity 0.2s ease}
+.gallery-item:hover .gallery-caption{opacity:1}
+/* Lightbox */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.lightbox.active{display:flex}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-inner img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;display:block}
+.lightbox-caption{color:rgba(255,255,255,0.7);font-size:13px;text-align:center;margin-top:0.75rem}
+.lightbox-close{position:fixed;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;opacity:0.7;line-height:1}
+.lightbox-close:hover{opacity:1}
+.lightbox-prev,.lightbox-next{position:fixed;top:50%;transform:translateY(-50%);background:none;border:none;color:#fff;font-size:32px;cursor:pointer;opacity:0.6;padding:1rem}
+.lightbox-prev{left:1rem}
+.lightbox-next{right:1rem}
+.lightbox-prev:hover,.lightbox-next:hover{opacity:1}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border);margin-top:2rem}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.page-header{padding:2.5rem 1rem 1.5rem}.gallery-section{padding:2rem 1rem}.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}}
+</style>
+</head>
+<body>
+<nav><a class="nav-name" href="/">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
+
+<div class="page-header">
+  <p class="label">Gallery</p>
+  <h1>Speaking &amp; Events</h1>
+  <p>Selected moments from keynotes, panels, and industry events.</p>
+</div>
+
+<div class="gallery-section">
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Photos are loaded from the /photos/ folder.
+         To add a photo: upload it to the photos/ folder in GitHub,
+         then add an entry below following this pattern:
+
+    <div class="gallery-item" data-caption="Event name, Year" onclick="openLightbox(this)">
+      <img src="/photos/your-photo.jpg" alt="Description" loading="lazy">
+      <div class="gallery-caption">Event name, Year</div>
+    </div>
+
+    -->
+
+    <div class="gallery-item" data-caption="Add your first photo" style="display:flex;align-items:center;justify-content:center;cursor:default">
+      <div style="text-align:center;padding:2rem;color:var(--text-tertiary)">
+        <div style="font-size:32px;margin-bottom:0.5rem">📷</div>
+        <div style="font-size:13px">Upload photos to <code style="font-size:12px;background:var(--border);padding:2px 6px;border-radius:4px">/photos/</code> on GitHub</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <button class="lightbox-prev" onclick="prevPhoto()">&#8592;</button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+  <button class="lightbox-next" onclick="nextPhoto()">&#8594;</button>
+</div>
+
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+
+<script>
+  const items = Array.from(document.querySelectorAll('.gallery-item[onclick]'));
+  let current = 0;
+
+  function openLightbox(el) {
+    current = items.indexOf(el);
+    showPhoto(current);
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showPhoto(i) {
+    const item = items[i];
+    const img = item.querySelector('img');
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightboxImg').alt = img.alt;
+    document.getElementById('lightboxCaption').textContent = item.dataset.caption || '';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightboxOnBg(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+
+  function nextPhoto() {
+    current = (current + 1) % items.length;
+    showPhoto(current);
+  }
+
+  function prevPhoto() {
+    current = (current - 1 + items.length) % items.length;
+    showPhoto(current);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextPhoto();
+    if (e.key === 'ArrowLeft') prevPhoto();
+  });
+</script>
+</body>
+</html>
