@@ -23,9 +23,10 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
 .hero-meta span{font-size:13px;color:var(--text-tertiary)}
 .hero-meta strong{color:var(--text-primary);font-weight:500}
-.speaking-photo{position:relative;width:100%;border-bottom:0.5px solid var(--border);text-align:center;background:#000}
-.speaking-photo img{width:100%;max-width:680px;height:auto;display:block;margin:0 auto}
-.speaking-photo figcaption{padding:0.75rem 1.5rem;font-size:12px;color:var(--text-tertiary);letter-spacing:0.04em;text-align:right;max-width:680px;margin:0 auto}
+.speaking-photo{position:relative;width:100%;border-bottom:0.5px solid var(--border)}
+.speaking-photo-inner{width:100%;height:560px;overflow:hidden;position:relative}
+.speaking-photo-inner img{width:100%;height:100%;object-fit:cover;object-position:center 16%;display:block}
+.speaking-photo figcaption{padding:0.6rem 1.5rem;font-size:12px;color:var(--text-tertiary);letter-spacing:0.04em;text-align:right}
 section{padding:5rem 2rem;max-width:860px;margin:0 auto}
 section{border-bottom:0.5px solid var(--border)}
 section:last-of-type{border-bottom:none}
@@ -48,14 +49,16 @@ section:last-of-type{border-bottom:none}
 .contact-block p{font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:1.5rem}
 .contact-link{font-size:15px;font-weight:500;color:var(--text-primary);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px}
 footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
-@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.hero,section{padding:3rem 1rem}.topics-grid{grid-template-columns:1fr}}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.hero,section{padding:3rem 1rem}.topics-grid{grid-template-columns:1fr}.speaking-photo-inner{height:320px}}
 </style>
 </head>
 <body>
 <nav><span class="nav-name">Tony Fergusson</span><div class="nav-links"><a href="#about">About</a><a href="#topics">Topics</a><a href="/articles/">Writing</a><a href="/gallery.html">Gallery</a><a href="#contact">Contact</a></div></nav>
 <div class="hero"><p class="label">Security Leader · Speaker · Advisor</p><h1>Those who build trust will thrive in the AI era.</h1><p class="hero-sub">Zero Trust pioneer helping enterprises navigate the shift from perimeter defence to AI-native architectures — without losing control of their security posture.</p><div class="hero-meta"><span><strong>25+ years</strong> in security &amp; networking</span><span><strong>First</strong> ZTNA implementer</span><span><strong>Based in</strong> Copenhagen, Denmark</span></div></div>
 <figure class="speaking-photo">
-  <img src="/Encore.jpeg" alt="Tony Fergusson speaking at Zscaler ZenithLive Encore">
+  <div class="speaking-photo-inner">
+    <img src="/Encore.jpeg" alt="Tony Fergusson speaking at Zscaler ZenithLive Encore">
+  </div>
   <figcaption>Zscaler ZenithLive Encore</figcaption>
 </figure>
 <section class="about" id="about"><p class="label">About</p><p>Tony Fergusson has more than <strong>25 years of experience</strong> in networking, security, and IT leadership across a range of industries. Described as having a "visionary mindset," he was one of the earliest adopters of Zero Trust networking principles and among the very first practitioners to implement ZTNA in production.</p><p>His career spans enterprise security leadership, secure cloud transformation, and strategic advisory work. He led <strong>MAN Energy Solutions'</strong> award-winning digital transformation to Zero Trust network architecture — a programme recognised as a reference case for large-scale security modernisation.</p><p>Tony is currently developing the <strong>Agentic Security Edge (ASE)</strong> framework — a next-generation governance model for AI agents that embeds organisational values, regulatory constraints, and security policy directly into agent behaviour at runtime.</p><p>He works across EMEA, advising enterprises on security strategy, AI governance, and the architecture decisions that will determine who thrives in an agentic world.</p></section>
