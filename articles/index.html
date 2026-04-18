@@ -20,16 +20,22 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
 .page-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:0.75rem}
 .page-header p{font-size:16px;color:var(--text-secondary);max-width:520px}
-.filter-bar{max-width:960px;margin:0 auto;padding:1.5rem 2rem 0;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
-.filter-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-tertiary);margin-right:0.25rem;white-space:nowrap}
-.filter-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;border:0.5px solid var(--border);background:var(--tag-bg);color:var(--text-secondary);cursor:pointer;transition:all 0.15s;white-space:nowrap;user-select:none}
-.filter-tag:hover{color:var(--text-primary);border-color:var(--text-tertiary)}
+
+/* Filter bar — clearer label and larger tags */
+.filter-bar{max-width:960px;margin:0 auto;padding:1.75rem 2rem 0;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:13px;font-weight:600;letter-spacing:0.03em;color:var(--text-primary);margin-right:0.5rem;white-space:nowrap}
+.filter-tag{font-size:13px;padding:0.35rem 0.85rem;border-radius:999px;border:1px solid var(--border);background:var(--tag-bg);color:var(--text-secondary);cursor:pointer;transition:all 0.15s;white-space:nowrap;user-select:none;font-weight:500}
+.filter-tag:hover{color:var(--text-primary);border-color:var(--text-secondary)}
 .filter-tag.active{background:var(--tag-active-bg);color:var(--tag-active-text);border-color:transparent}
-.filter-divider{width:0.5px;height:16px;background:var(--border);margin:0 0.25rem;align-self:center}
+.filter-divider{width:1px;height:18px;background:var(--border);margin:0 0.25rem;align-self:center}
+
 .writing-list{max-width:960px;margin:0 auto;padding:0 2rem 5rem}
 .year-group{margin-top:3rem}
-.year-label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--border)}
+
+/* Year label — larger and bolder */
+.year-label{font-size:22px;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
 .year-group.hidden{display:none}
+
 .writing-item{padding:1rem 0;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:opacity 0.15s}
 .writing-item:hover{opacity:0.7}
 .writing-item.hidden{display:none}
@@ -41,7 +47,9 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .item-tag{font-size:11px;padding:0.2rem 0.55rem;border-radius:999px;background:var(--tag-bg);color:var(--text-tertiary);border:0.5px solid var(--border)}
 .item-tag.format{color:var(--text-secondary)}
 .item-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;flex-shrink:0}
-.writing-date{font-size:12px;color:var(--text-tertiary);white-space:nowrap}
+
+/* Date — bigger and more readable */
+.writing-date{font-size:13px;font-weight:500;color:var(--text-secondary);white-space:nowrap}
 .external-icon{font-size:11px;color:var(--text-tertiary)}
 .no-results{padding:3rem 0;font-size:15px;color:var(--text-tertiary);display:none}
 .loading{padding:4rem 2rem;text-align:center;font-size:15px;color:var(--text-tertiary)}
@@ -80,13 +88,11 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 <footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
 
 <script>
-// Format emoji map for entries without images
 const formatEmoji = {
   Article: '📝', Keynote: '🎤', Interview: '🎙️', Podcast: '🎧',
   Panel: '👥', Roundtable: '🔄', Webinar: '💻', Breakout: '⚡', Workshop: '🛠️'
 };
 
-// Month names for display
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 function formatDate(dateStr) {
@@ -113,7 +119,6 @@ function buildThumb(article) {
 }
 
 function buildLink(article) {
-  // If it has a path, link to the article page; otherwise link directly to source_url
   if (article.path) return article.path;
   if (article.source_url) return article.source_url;
   return '#';
@@ -127,7 +132,6 @@ function render(articles) {
   const list = document.getElementById('writingList');
   document.getElementById('loading').remove();
 
-  // Group by year
   const byYear = {};
   articles.forEach(a => {
     const year = a.date ? a.date.slice(0, 4) : 'Unknown';
@@ -141,13 +145,11 @@ function render(articles) {
     const group = document.createElement('div');
     group.className = 'year-group';
     group.dataset.year = year;
-
     group.innerHTML = `<p class="year-label">${year}</p>`;
 
     byYear[year].forEach(article => {
       const href = buildLink(article);
       const external = isExternal(article);
-      const target = external ? ' target="_blank" rel="noopener"' : '';
       const externalIcon = external ? '<span class="external-icon">↗</span>' : '';
 
       const el = document.createElement('a');
@@ -196,7 +198,6 @@ function applyFilter(filter) {
   document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
 }
 
-// Wire filter buttons
 document.querySelectorAll('.filter-tag').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
@@ -205,7 +206,6 @@ document.querySelectorAll('.filter-tag').forEach(btn => {
   });
 });
 
-// Fetch and render
 fetch('/data/articles.json')
   .then(r => r.json())
   .then(data => render(data.articles))
