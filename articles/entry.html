@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tony Fergusson</title>
+<meta name="description" content="">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--tag-bg:rgba(0,0,0,0.05)}
+@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+
+/* Hero image */
+.entry-hero{width:100%;max-height:380px;object-fit:cover;display:block}
+.entry-hero-placeholder{width:100%;height:220px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:56px}
+
+.entry-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
+.back-link:hover{color:var(--text-primary)}
+
+h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+
+.author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
+.author-info{display:flex;flex-direction:column;gap:2px}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
+.author-date{font-size:13px;color:var(--text-tertiary)}
+
+.entry-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.entry-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.entry-tag.format{font-weight:600;color:var(--text-primary)}
+
+/* Source link card */
+.source-card{margin-top:2.5rem;padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--bg-secondary)}
+.source-card-label{font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:0.5rem}
+.source-card-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:15px;font-weight:500;color:var(--text-primary);text-decoration:none;word-break:break-all}
+.source-card-link:hover{text-decoration:underline;text-underline-offset:3px}
+.source-card-link svg{flex-shrink:0;opacity:0.5}
+.source-card-desc{font-size:13px;color:var(--text-tertiary);margin-top:0.4rem}
+
+.no-source{margin-top:2.5rem;padding:1.5rem;border:0.5px solid var(--border);border-radius:12px;font-size:14px;color:var(--text-tertiary)}
+
+.loading{padding:6rem 2rem;text-align:center;font-size:15px;color:var(--text-tertiary)}
+.not-found{padding:4rem 2rem;text-align:center}
+.not-found h2{font-size:20px;font-weight:500;margin-bottom:0.5rem}
+.not-found p{font-size:15px;color:var(--text-secondary)}
+
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.entry-container{padding:2rem 1rem 4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<div id="heroArea"></div>
+
+<div class="entry-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+  <div id="entryContent"><p class="loading">Loading...</p></div>
+</div>
+
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+
+<script>
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const formatEmoji = {
+  Article:'📝', Keynote:'🎤', Interview:'🎙️', Podcast:'🎧',
+  Panel:'👥', Roundtable:'🔄', Webinar:'💻', Breakout:'⚡', Workshop:'🛠️'
+};
+
+function formatDateFull(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  return `${String(d.getDate()).padStart(2,'0')} ${months[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+function sourceDomain(url) {
+  try { return new URL(url).hostname.replace('www.',''); }
+  catch { return url; }
+}
+
+function render(article) {
+  // Update page title and meta
+  document.title = `${article.title} — Tony Fergusson`;
+  document.querySelector('meta[name="description"]').content = article.title;
+
+  // Hero
+  const heroArea = document.getElementById('heroArea');
+  if (article.image) {
+    heroArea.innerHTML = `<img class="entry-hero" src="${article.image.replace(/w=\d+/,'w=1400').replace(/h=\d+/,'h=600')}" alt="">`;
+  } else {
+    const emoji = formatEmoji[article.format] || '📄';
+    heroArea.innerHTML = `<div class="entry-hero-placeholder">${emoji}</div>`;
+  }
+
+  // Tags
+  const tags = [];
+  if (article.format) tags.push(`<span class="entry-tag format">${article.format}</span>`);
+  if (article.event)  tags.push(`<span class="entry-tag">${article.event}</span>`);
+  if (article.city)   tags.push(`<span class="entry-tag">${article.city}</span>`);
+  if (article.country)tags.push(`<span class="entry-tag">${article.country}</span>`);
+
+  // Source card
+  let sourceHtml = '';
+  if (article.source_url) {
+    const domain = sourceDomain(article.source_url);
+    sourceHtml = `
+      <div class="source-card">
+        <p class="source-card-label">Original source</p>
+        <a class="source-card-link" href="${article.source_url}" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          ${article.source_url}
+        </a>
+        <p class="source-card-desc">Published on ${domain}</p>
+      </div>`;
+  } else {
+    sourceHtml = `<div class="no-source">No external source link available for this entry.</div>`;
+  }
+
+  document.getElementById('entryContent').innerHTML = `
+    <h1>${article.title}</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">${formatDateFull(article.date)}</span>
+      </div>
+    </div>
+    <div class="entry-tags">${tags.join('')}</div>
+    ${sourceHtml}`;
+}
+
+function showNotFound() {
+  document.getElementById('entryContent').innerHTML = `
+    <div class="not-found">
+      <h2>Entry not found</h2>
+      <p>This entry doesn't exist or may have been moved.</p>
+    </div>`;
+}
+
+// Get slug from URL: /articles/entry.html?slug=some-slug
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('slug');
+
+if (!slug) {
+  showNotFound();
+} else {
+  fetch('/data/articles.json')
+    .then(r => r.json())
+    .then(data => {
+      const article = data.articles.find(a => a.slug === slug);
+      if (article) render(article);
+      else showNotFound();
+    })
+    .catch(() => {
+      document.getElementById('entryContent').innerHTML = '<p class="loading">Could not load entry.</p>';
+    });
+}
+</script>
+</body>
+</html>
