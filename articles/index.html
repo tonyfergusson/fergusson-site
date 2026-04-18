@@ -16,34 +16,36 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .nav-links{display:flex;gap:2rem}
 .nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
 .nav-links a:hover{color:var(--text-primary)}
-.page-header{padding:4rem 2rem 2.5rem;max-width:860px;margin:0 auto;border-bottom:0.5px solid var(--border)}
+.page-header{padding:4rem 2rem 2.5rem;max-width:960px;margin:0 auto;border-bottom:0.5px solid var(--border)}
 .label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
 .page-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:0.75rem}
 .page-header p{font-size:16px;color:var(--text-secondary);max-width:520px}
-
-/* Filter bar */
-.filter-bar{max-width:860px;margin:0 auto;padding:1.5rem 2rem 0;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
+.filter-bar{max-width:960px;margin:0 auto;padding:1.5rem 2rem 0;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
 .filter-label{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-tertiary);margin-right:0.25rem;white-space:nowrap}
 .filter-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;border:0.5px solid var(--border);background:var(--tag-bg);color:var(--text-secondary);cursor:pointer;transition:all 0.15s;white-space:nowrap;user-select:none}
 .filter-tag:hover{color:var(--text-primary);border-color:var(--text-tertiary)}
 .filter-tag.active{background:var(--tag-active-bg);color:var(--tag-active-text);border-color:transparent}
 .filter-divider{width:0.5px;height:16px;background:var(--border);margin:0 0.25rem;align-self:center}
-
-.writing-list{max-width:860px;margin:0 auto;padding:0 2rem 5rem}
+.writing-list{max-width:960px;margin:0 auto;padding:0 2rem 5rem}
 .year-group{margin-top:3rem}
 .year-label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:0.5px solid var(--border)}
 .year-group.hidden{display:none}
-.writing-item{padding:1.1rem 0;border-bottom:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;text-decoration:none;color:inherit;transition:opacity 0.15s}
-.writing-item:hover{opacity:0.65}
+
+/* Article card with thumbnail */
+.writing-item{padding:1rem 0;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:opacity 0.15s}
+.writing-item:hover{opacity:0.7}
 .writing-item.hidden{display:none}
-.item-title{font-size:15px;font-weight:500;margin-bottom:0.4rem}
-.item-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.4rem}
+.item-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;flex-shrink:0;background:var(--bg-secondary)}
+.item-body{flex:1;min-width:0}
+.item-title{font-size:15px;font-weight:500;margin-bottom:0.35rem;line-height:1.35}
+.item-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.35rem}
 .item-tag{font-size:11px;padding:0.2rem 0.55rem;border-radius:999px;background:var(--tag-bg);color:var(--text-tertiary);border:0.5px solid var(--border)}
 .item-tag.format{color:var(--text-secondary)}
-.writing-date{font-size:12px;color:var(--text-tertiary);white-space:nowrap;margin-top:3px}
+.item-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;flex-shrink:0}
+.writing-date{font-size:12px;color:var(--text-tertiary);white-space:nowrap}
 .no-results{padding:3rem 0;font-size:15px;color:var(--text-tertiary);display:none}
 footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
-@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.page-header,.writing-list,.filter-bar{padding-left:1rem;padding-right:1rem}}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.page-header,.writing-list,.filter-bar{padding-left:1rem;padding-right:1rem}.item-thumb{width:52px;height:52px}}
 </style>
 </head>
 <body>
@@ -71,228 +73,175 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 <div class="writing-list" id="writingList">
 
 <div class="year-group" data-year="2024"><p class="year-label">2024</p>
-<a class="writing-item" href="/articles/exploiting-trust.html"
-   data-format="Article" data-event="Cloud Security Alliance" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/exploiting-trust.html" data-format="Article" data-event="Cloud Security Alliance" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Unveiling the Dark Arts of Exploiting Trust</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-      <span class="item-tag">Cloud Security Alliance</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span><span class="item-tag">Cloud Security Alliance</span></div>
   </div>
-  <span class="writing-date">14 May</span>
+  <div class="item-right"><span class="writing-date">14 May</span></div>
 </a>
 </div>
 
 <div class="year-group" data-year="2021"><p class="year-label">2021</p>
-<a class="writing-item" href="/articles/2021/the-true-cost-of-legacy-technology-how-technical-debt-stymies-enterprise-security-and-network-transformation.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2021/the-true-cost-of-legacy-technology-how-technical-debt-stymies-enterprise-security-and-network-transformation.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">The True Cost of Legacy Technology: How Technical Debt Stymies Enterprise Security and Network Transformation</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">02 May</span>
+  <div class="item-right"><span class="writing-date">02 May</span></div>
 </a>
 </div>
 
 <div class="year-group" data-year="2020"><p class="year-label">2020</p>
-<a class="writing-item" href="/articles/2020/the-cio-mandate-for-secure-cloud-transformation.html"
-   data-format="Keynote" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2020/the-cio-mandate-for-secure-cloud-transformation.html" data-format="Keynote" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">The CIO Mandate for Secure Cloud Transformation</p>
-    <div class="item-tags">
-      <span class="item-tag format">Keynote</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Keynote</span></div>
   </div>
-  <span class="writing-date">14 Apr</span>
+  <div class="item-right"><span class="writing-date">14 Apr</span></div>
 </a>
-<a class="writing-item" href="/articles/2020/three-ways-ztna-protects-against-ransomware-in-2020-and-beyond.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2020/three-ways-ztna-protects-against-ransomware-in-2020-and-beyond.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Three Ways ZTNA Protects Against Ransomware in 2020...and Beyond</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">14 Feb</span>
+  <div class="item-right"><span class="writing-date">14 Feb</span></div>
 </a>
-<a class="writing-item" href="/articles/2020/computer-world-keynote-blackcloud.html"
-   data-format="Keynote" data-event="Computer World" data-city="" data-country="Denmark">
-  <div>
+<a class="writing-item" href="/articles/2020/computer-world-keynote-blackcloud.html" data-format="Keynote" data-event="Computer World" data-city="" data-country="Denmark">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Computer World Keynote: BlackCloud</p>
-    <div class="item-tags">
-      <span class="item-tag format">Keynote</span>
-      <span class="item-tag">Computer World</span>
-      <span class="item-tag">Denmark</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Keynote</span><span class="item-tag">Computer World</span><span class="item-tag">Denmark</span></div>
   </div>
-  <span class="writing-date">22 Jan</span>
+  <div class="item-right"><span class="writing-date">22 Jan</span></div>
 </a>
 </div>
 
 <div class="year-group" data-year="2019"><p class="year-label">2019</p>
-<a class="writing-item" href="/articles/2019/25-seconds-in-fiji.html"
-   data-format="Article" data-event="" data-city="" data-country="Fiji">
-  <div>
+<a class="writing-item" href="/articles/2019/25-seconds-in-fiji.html" data-format="Article" data-event="" data-city="" data-country="Fiji">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">25 Seconds in Fiji</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-      <span class="item-tag">Fiji</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span><span class="item-tag">Fiji</span></div>
   </div>
-  <span class="writing-date">25 Oct</span>
+  <div class="item-right"><span class="writing-date">25 Oct</span></div>
 </a>
-<a class="writing-item" href="/articles/2019/computerworld-interview.html"
-   data-format="Interview" data-event="ComputerWorld" data-city="" data-country="Denmark">
-  <div>
+<a class="writing-item" href="/articles/2019/computerworld-interview.html" data-format="Interview" data-event="ComputerWorld" data-city="" data-country="Denmark">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">ComputerWorld Interview: How MAN Energy Solutions Protects Against Hackers</p>
-    <div class="item-tags">
-      <span class="item-tag format">Interview</span>
-      <span class="item-tag">ComputerWorld</span>
-      <span class="item-tag">Denmark</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Interview</span><span class="item-tag">ComputerWorld</span><span class="item-tag">Denmark</span></div>
   </div>
-  <span class="writing-date">21 Oct</span>
+  <div class="item-right"><span class="writing-date">21 Oct</span></div>
 </a>
-<a class="writing-item" href="/articles/2019/thecube-interview-with-peter-burris.html"
-   data-format="Interview" data-event="theCUBE" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2019/thecube-interview-with-peter-burris.html" data-format="Interview" data-event="theCUBE" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">theCUBE Interview with Peter Burris</p>
-    <div class="item-tags">
-      <span class="item-tag format">Interview</span>
-      <span class="item-tag">theCUBE</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Interview</span><span class="item-tag">theCUBE</span></div>
   </div>
-  <span class="writing-date">05 Aug</span>
+  <div class="item-right"><span class="writing-date">05 Aug</span></div>
 </a>
-<a class="writing-item" href="/articles/2019/blackcloud-the-internet-is-going-dark-cio-europe-article.html"
-   data-format="Article" data-event="CIO Europe" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2019/blackcloud-the-internet-is-going-dark-cio-europe-article.html" data-format="Article" data-event="CIO Europe" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">BlackCloud: The Internet is Going Dark</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-      <span class="item-tag">CIO Europe</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span><span class="item-tag">CIO Europe</span></div>
   </div>
-  <span class="writing-date">01 Jun</span>
+  <div class="item-right"><span class="writing-date">01 Jun</span></div>
 </a>
-<a class="writing-item" href="/articles/2019/secure-cloud-transformation.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2019/secure-cloud-transformation.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Secure Cloud Transformation — The Book</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">10 Feb</span>
+  <div class="item-right"><span class="writing-date">10 Feb</span></div>
 </a>
 </div>
 
 <div class="year-group" data-year="2018"><p class="year-label">2018</p>
-<a class="writing-item" href="/articles/2018/why-darknet-is-good-for-the-enterprise-and-your-private-apps.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2018/why-darknet-is-good-for-the-enterprise-and-your-private-apps.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Why Darknet is Good for the Enterprise and Your Private Apps</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">14 Dec</span>
+  <div class="item-right"><span class="writing-date">14 Dec</span></div>
 </a>
-<a class="writing-item" href="/articles/2018/a-first-for-zero-trust-aws-security-competency-status.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2018/a-first-for-zero-trust-aws-security-competency-status.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">A First for Zero Trust: AWS Security Competency Status</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">26 Sep</span>
+  <div class="item-right"><span class="writing-date">26 Sep</span></div>
 </a>
 </div>
 
 <div class="year-group" data-year="2017"><p class="year-label">2017</p>
-<a class="writing-item" href="/articles/2017/cloud-security-alliance-csa-nordicsummitconference2017.html"
-   data-format="Keynote" data-event="CSA Nordic Summit" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2017/cloud-security-alliance-csa-nordicsummitconference2017.html" data-format="Keynote" data-event="CSA Nordic Summit" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Cloud Security Alliance Nordic Summit Conference 2017</p>
-    <div class="item-tags">
-      <span class="item-tag format">Keynote</span>
-      <span class="item-tag">CSA Nordic Summit</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Keynote</span><span class="item-tag">CSA Nordic Summit</span></div>
   </div>
-  <span class="writing-date">12 Jun</span>
+  <div class="item-right"><span class="writing-date">12 Jun</span></div>
 </a>
-<a class="writing-item" href="/articles/2017/rantek-performance-day-2017-may-18-the-black-diamond-copenhagen.html"
-   data-format="Keynote" data-event="RANTEK Performance Day" data-city="Copenhagen" data-country="Denmark">
-  <div>
+<a class="writing-item" href="/articles/2017/rantek-performance-day-2017-may-18-the-black-diamond-copenhagen.html" data-format="Keynote" data-event="RANTEK Performance Day" data-city="Copenhagen" data-country="Denmark">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">RANTEK Performance Day 2017 — The Black Diamond, Copenhagen</p>
-    <div class="item-tags">
-      <span class="item-tag format">Keynote</span>
-      <span class="item-tag">RANTEK Performance Day</span>
-      <span class="item-tag">Copenhagen</span>
-      <span class="item-tag">Denmark</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Keynote</span><span class="item-tag">RANTEK Performance Day</span><span class="item-tag">Copenhagen</span><span class="item-tag">Denmark</span></div>
   </div>
-  <span class="writing-date">18 May</span>
+  <div class="item-right"><span class="writing-date">18 May</span></div>
 </a>
-<a class="writing-item" href="/articles/2017/black-cloud-how-the-internet-is-going-dark.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2017/black-cloud-how-the-internet-is-going-dark.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1504333638930-c8787321eee0?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Black Cloud: How the Internet is Going Dark</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">17 Apr</span>
+  <div class="item-right"><span class="writing-date">17 Apr</span></div>
 </a>
 </div>
 
 <div class="year-group" data-year="2016"><p class="year-label">2016</p>
-<a class="writing-item" href="/articles/2016/application-delivery-controllers-the-swiss-army-knife.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2016/application-delivery-controllers-the-swiss-army-knife.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Application Delivery Controllers: The Swiss Army Knife</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">29 Oct</span>
+  <div class="item-right"><span class="writing-date">29 Oct</span></div>
 </a>
-<a class="writing-item" href="/articles/2016/zscaler-cloud-experience-2016-copenhagen.html"
-   data-format="Keynote" data-event="Zscaler Cloud Experience" data-city="Copenhagen" data-country="Denmark">
-  <div>
+<a class="writing-item" href="/articles/2016/zscaler-cloud-experience-2016-copenhagen.html" data-format="Keynote" data-event="Zscaler Cloud Experience" data-city="Copenhagen" data-country="Denmark">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">Zscaler Cloud Experience 2016 — Copenhagen</p>
-    <div class="item-tags">
-      <span class="item-tag format">Keynote</span>
-      <span class="item-tag">Zscaler Cloud Experience</span>
-      <span class="item-tag">Copenhagen</span>
-      <span class="item-tag">Denmark</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Keynote</span><span class="item-tag">Zscaler Cloud Experience</span><span class="item-tag">Copenhagen</span><span class="item-tag">Denmark</span></div>
   </div>
-  <span class="writing-date">11 Oct</span>
+  <div class="item-right"><span class="writing-date">11 Oct</span></div>
 </a>
-<a class="writing-item" href="/articles/2016/end-of-an-era-for-vpn.html"
-   data-format="Article" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2016/end-of-an-era-for-vpn.html" data-format="Article" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">End of an Era for VPN?</p>
-    <div class="item-tags">
-      <span class="item-tag format">Article</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Article</span></div>
   </div>
-  <span class="writing-date">01 Sep</span>
+  <div class="item-right"><span class="writing-date">01 Sep</span></div>
 </a>
-<a class="writing-item" href="/articles/2016/a-world-without-the-security-perimeter.html"
-   data-format="Keynote" data-event="" data-city="" data-country="">
-  <div>
+<a class="writing-item" href="/articles/2016/a-world-without-the-security-perimeter.html" data-format="Keynote" data-event="" data-city="" data-country="">
+  <img class="item-thumb" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=128&h=128&fit=crop&auto=format" alt="">
+  <div class="item-body">
     <p class="item-title">A World without the Security Perimeter</p>
-    <div class="item-tags">
-      <span class="item-tag format">Keynote</span>
-    </div>
+    <div class="item-tags"><span class="item-tag format">Keynote</span></div>
   </div>
-  <span class="writing-date">28 Aug</span>
+  <div class="item-right"><span class="writing-date">28 Aug</span></div>
 </a>
 </div>
 
@@ -305,7 +254,6 @@ const btns = document.querySelectorAll('.filter-tag');
 const items = document.querySelectorAll('.writing-item');
 const groups = document.querySelectorAll('.year-group');
 const noResults = document.getElementById('noResults');
-
 btns.forEach(btn => {
   btn.addEventListener('click', () => {
     btns.forEach(b => b.classList.remove('active'));
@@ -313,13 +261,7 @@ btns.forEach(btn => {
     const filter = btn.dataset.filter;
     let anyVisible = false;
     items.forEach(item => {
-      let show = false;
-      if (filter === 'all') {
-        show = true;
-      } else {
-        const [type, value] = filter.split(':');
-        show = item.dataset[type] === value;
-      }
+      let show = filter === 'all' || item.dataset[filter.split(':')[0]] === filter.split(':')[1];
       item.classList.toggle('hidden', !show);
       if (show) anyVisible = true;
     });
