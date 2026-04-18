@@ -20,22 +20,16 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1rem}
 .page-header h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:0.75rem}
 .page-header p{font-size:16px;color:var(--text-secondary);max-width:520px}
-
-/* Filter bar — clearer label and larger tags */
 .filter-bar{max-width:960px;margin:0 auto;padding:1.75rem 2rem 0;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center}
 .filter-label{font-size:13px;font-weight:600;letter-spacing:0.03em;color:var(--text-primary);margin-right:0.5rem;white-space:nowrap}
 .filter-tag{font-size:13px;padding:0.35rem 0.85rem;border-radius:999px;border:1px solid var(--border);background:var(--tag-bg);color:var(--text-secondary);cursor:pointer;transition:all 0.15s;white-space:nowrap;user-select:none;font-weight:500}
 .filter-tag:hover{color:var(--text-primary);border-color:var(--text-secondary)}
 .filter-tag.active{background:var(--tag-active-bg);color:var(--tag-active-text);border-color:transparent}
 .filter-divider{width:1px;height:18px;background:var(--border);margin:0 0.25rem;align-self:center}
-
 .writing-list{max-width:960px;margin:0 auto;padding:0 2rem 5rem}
 .year-group{margin-top:3rem}
-
-/* Year label — larger and bolder */
 .year-label{font-size:22px;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
 .year-group.hidden{display:none}
-
 .writing-item{padding:1rem 0;border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;transition:opacity 0.15s}
 .writing-item:hover{opacity:0.7}
 .writing-item.hidden{display:none}
@@ -47,10 +41,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .item-tag{font-size:11px;padding:0.2rem 0.55rem;border-radius:999px;background:var(--tag-bg);color:var(--text-tertiary);border:0.5px solid var(--border)}
 .item-tag.format{color:var(--text-secondary)}
 .item-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.25rem;flex-shrink:0}
-
-/* Date — bigger and more readable */
 .writing-date{font-size:13px;font-weight:500;color:var(--text-secondary);white-space:nowrap}
-.external-icon{font-size:11px;color:var(--text-tertiary)}
 .no-results{padding:3rem 0;font-size:15px;color:var(--text-tertiary);display:none}
 .loading{padding:4rem 2rem;text-align:center;font-size:15px;color:var(--text-tertiary)}
 footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
@@ -89,10 +80,9 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 
 <script>
 const formatEmoji = {
-  Article: '📝', Keynote: '🎤', Interview: '🎙️', Podcast: '🎧',
-  Panel: '👥', Roundtable: '🔄', Webinar: '💻', Breakout: '⚡', Workshop: '🛠️'
+  Article:'📝', Keynote:'🎤', Interview:'🎙️', Podcast:'🎧',
+  Panel:'👥', Roundtable:'🔄', Webinar:'💻', Breakout:'⚡', Workshop:'🛠️'
 };
-
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 function formatDate(dateStr) {
@@ -102,30 +92,20 @@ function formatDate(dateStr) {
 
 function buildTags(article) {
   const tags = [];
-  if (article.format) tags.push(`<span class="item-tag format">${article.format}</span>`);
-  if (article.event) tags.push(`<span class="item-tag">${article.event}</span>`);
-  if (article.city) tags.push(`<span class="item-tag">${article.city}</span>`);
+  if (article.format)  tags.push(`<span class="item-tag format">${article.format}</span>`);
+  if (article.event)   tags.push(`<span class="item-tag">${article.event}</span>`);
+  if (article.city)    tags.push(`<span class="item-tag">${article.city}</span>`);
   if (article.country) tags.push(`<span class="item-tag">${article.country}</span>`);
   return tags.join('');
 }
 
 function buildThumb(article) {
   if (article.image) {
-    const thumbUrl = article.image.replace(/w=\d+/, 'w=128').replace(/h=\d+/, 'h=128');
+    const thumbUrl = article.image.replace(/w=\d+/,'w=128').replace(/h=\d+/,'h=128');
     return `<img class="item-thumb" src="${thumbUrl}" alt="" loading="lazy">`;
   }
   const emoji = formatEmoji[article.format] || '📄';
   return `<div class="item-thumb-placeholder">${emoji}</div>`;
-}
-
-function buildLink(article) {
-  if (article.path) return article.path;
-  if (article.source_url) return article.source_url;
-  return '#';
-}
-
-function isExternal(article) {
-  return !article.path && article.source_url;
 }
 
 function render(articles) {
@@ -134,31 +114,27 @@ function render(articles) {
 
   const byYear = {};
   articles.forEach(a => {
-    const year = a.date ? a.date.slice(0, 4) : 'Unknown';
+    const year = a.date ? a.date.slice(0,4) : 'Unknown';
     if (!byYear[year]) byYear[year] = [];
     byYear[year].push(a);
   });
 
-  const years = Object.keys(byYear).sort((a, b) => b - a);
-
-  years.forEach(year => {
+  Object.keys(byYear).sort((a,b) => b-a).forEach(year => {
     const group = document.createElement('div');
     group.className = 'year-group';
     group.dataset.year = year;
     group.innerHTML = `<p class="year-label">${year}</p>`;
 
     byYear[year].forEach(article => {
-      const href = buildLink(article);
-      const external = isExternal(article);
-      const externalIcon = external ? '<span class="external-icon">↗</span>' : '';
+      // Always route through the entry page
+      const href = `/articles/entry.html?slug=${encodeURIComponent(article.slug)}`;
 
       const el = document.createElement('a');
       el.className = 'writing-item';
       el.href = href;
-      if (external) { el.target = '_blank'; el.rel = 'noopener'; }
-      el.dataset.format = article.format || '';
-      el.dataset.event = article.event || '';
-      el.dataset.city = article.city || '';
+      el.dataset.format  = article.format  || '';
+      el.dataset.event   = article.event   || '';
+      el.dataset.city    = article.city    || '';
       el.dataset.country = article.country || '';
 
       el.innerHTML = `
@@ -169,7 +145,6 @@ function render(articles) {
         </div>
         <div class="item-right">
           <span class="writing-date">${formatDate(article.date)}</span>
-          ${externalIcon}
         </div>`;
 
       group.appendChild(el);
@@ -180,12 +155,12 @@ function render(articles) {
 }
 
 function applyFilter(filter) {
-  const items = document.querySelectorAll('.writing-item');
+  const items  = document.querySelectorAll('.writing-item');
   const groups = document.querySelectorAll('.year-group');
   let anyVisible = false;
 
   items.forEach(item => {
-    let show = filter === 'all' || item.dataset[filter.split(':')[0]] === filter.split(':')[1];
+    const show = filter === 'all' || item.dataset[filter.split(':')[0]] === filter.split(':')[1];
     item.classList.toggle('hidden', !show);
     if (show) anyVisible = true;
   });
