@@ -27,7 +27,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .quote-ticker::before,.quote-ticker::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:2;pointer-events:none}
 .quote-ticker::before{left:0;background:linear-gradient(to right,var(--bg-primary),transparent)}
 .quote-ticker::after{right:0;background:linear-gradient(to left,var(--bg-primary),transparent)}
-.ticker-track{display:flex;gap:0;width:max-content;animation:ticker 70s linear infinite}
+.ticker-track{display:flex;gap:0;width:max-content;animation:ticker 75s linear infinite}
 .ticker-track:hover{animation-play-state:paused}
 .ticker-item{display:flex;align-items:center;gap:0.75rem;padding:0 3rem;white-space:nowrap;flex-shrink:0;text-decoration:none;color:inherit;cursor:pointer}
 .ticker-item:hover .ticker-quote{opacity:0.6}
@@ -71,6 +71,7 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 
 <div class="quote-ticker" aria-label="Quotes from Tony Fergusson's published writing">
   <div class="ticker-track" id="ticker-track">
+    <a class="ticker-item" href="https://www.itpro.com/security/cyber-attacks/how-to-protect-your-business-from-living-off-the-land-attacks"><span class="ticker-quote">"Adversaries are being forced to be more stealthy — leveraging legitimate tools and processes to blend in seamlessly with legitimate user activity."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">IT Pro, 2026</span></a>
     <a class="ticker-item" href="/articles/"><span class="ticker-quote">"Those who build trust will thrive in the AI era."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Tony Fergusson</span></a>
     <a class="ticker-item" href="/articles/2022-01-stop-trying-make-firewalls-happen.html"><span class="ticker-quote">"The firewall was designed for a world that no longer exists. That world is gone."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Stop Trying to Make Firewalls Happen, 2022</span></a>
     <a class="ticker-item" href="/articles/2023-01-why-your-soc-wont-save-you.html"><span class="ticker-quote">"A SOC that monitors a perimeter that no longer exists is not security — it is theatre."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Why Your SOC Won't Save You, 2023</span></a>
