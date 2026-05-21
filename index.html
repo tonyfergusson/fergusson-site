@@ -23,6 +23,17 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
 .hero-meta span{font-size:13px;color:var(--text-tertiary)}
 .hero-meta strong{color:var(--text-primary);font-weight:500}
+.quote-ticker{overflow:hidden;border-bottom:0.5px solid var(--border);padding:1.25rem 0;position:relative;background:var(--bg-primary)}
+.quote-ticker::before,.quote-ticker::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:2;pointer-events:none}
+.quote-ticker::before{left:0;background:linear-gradient(to right,var(--bg-primary),transparent)}
+.quote-ticker::after{right:0;background:linear-gradient(to left,var(--bg-primary),transparent)}
+.ticker-track{display:flex;gap:0;width:max-content;animation:ticker 70s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:flex;align-items:center;gap:0.75rem;padding:0 3rem;white-space:nowrap;flex-shrink:0}
+.ticker-quote{font-family:Georgia,'Times New Roman',serif;font-size:15px;color:var(--text-primary);font-style:italic}
+.ticker-attr{font-size:11px;color:var(--text-tertiary);letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap}
+.ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--border);flex-shrink:0;display:inline-block}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .speaking-photo{position:relative;width:100%;border-bottom:0.5px solid var(--border)}
 .speaking-photo-inner{width:100%;height:860px;overflow:hidden;position:relative}
 .speaking-photo-inner img{width:100%;height:100%;object-fit:cover;object-position:center 47%;display:block}
@@ -55,6 +66,22 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 <body>
 <nav><span class="nav-name">Tony Fergusson</span><div class="nav-links"><a href="#about">About</a><a href="#topics">Topics</a><a href="/articles/">Writing</a><a href="/speaking.html">Speaking</a><a href="/gallery.html">Gallery</a><a href="#contact">Contact</a></div></nav>
 <div class="hero"><p class="label">Security Leader · Speaker · Advisor</p><h1>Those who build trust will thrive in the AI era.</h1><p class="hero-sub">Zero Trust pioneer helping enterprises navigate the shift from perimeter defence to AI-native architectures — without losing control of their security posture.</p><div class="hero-meta"><span><strong>25+ years</strong> in security &amp; networking</span><span><strong>First</strong> ZTNA implementer</span><span><strong>Based in</strong> Copenhagen, Denmark</span></div></div>
+
+<div class="quote-ticker" aria-label="Quotes from Tony Fergusson's published writing">
+  <div class="ticker-track" id="ticker-track">
+    <div class="ticker-item"><span class="ticker-quote">"Those who build trust will thrive in the AI era."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Tony Fergusson</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"The firewall was designed for a world that no longer exists. That world is gone."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Stop Trying to Make Firewalls Happen, 2022</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"A SOC that monitors a perimeter that no longer exists is not security — it is theatre."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Why Your SOC Won't Save You, 2023</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"Technical debt is not a balance sheet item — it is a threat vector."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">The True Cost of Legacy Technology, 2021</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"Prompt manipulation is not a theoretical risk. The box is open."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">SDxCentral, 2025</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"Technology without strategy is noise with a price tag."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">A Fool with a Tool, Cloud Security Alliance, 2023</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"Trust is the most exploited vulnerability in enterprise security."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Exploiting Trust, Cloud Security Alliance, 2024</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"WannaCry proved that perimeter security was already dead. Most organisations just hadn't received the memo."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">WannaCry Five Years, CXO REvolutionaries, 2022</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"Simplicity is not the absence of sophistication — it is complexity fully resolved."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Simplicity: Complexity Resolved, 2024</span></div>
+    <div class="ticker-item"><span class="ticker-quote">"If you do not control your data, you do not control your destiny."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Who Owns Information in the Era of AI?, 2024</span></div>
+  </div>
+</div>
+
 <figure class="speaking-photo">
   <div class="speaking-photo-inner">
     <img src="/Encore.jpeg" alt="Tony Fergusson speaking at Zscaler ZenithLive Encore">
@@ -66,5 +93,15 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 <section id="writing"><p class="label">Writing &amp; Talks</p><div class="writing-list"><a class="writing-item" href="/articles/exploiting-trust.html"><div><h3>Unveiling the Dark Arts of Exploiting Trust</h3><p>Cloud Security Alliance · LOTL and LOTS attacks — how adversaries weaponise trusted services to evade detection</p></div><span class="writing-year">2024</span></a><a class="writing-item" href="/articles/2021/the-true-cost-of-legacy-technology-how-technical-debt-stymies-enterprise-security-and-network-transformation.html"><div><h3>The True Cost of Legacy Technology</h3><p>How technical debt stymies enterprise security and network transformation</p></div><span class="writing-year">2021</span></a><a class="writing-item" href="/articles/2020/the-cio-mandate-for-secure-cloud-transformation.html"><div><h3>The CIO Mandate for Secure Cloud Transformation</h3><p>The shift to remote-first, cloud-native, Zero Trust architecture</p></div><span class="writing-year">2020</span></a><a class="writing-item" href="/articles/2020/three-ways-ztna-protects-against-ransomware-in-2020-and-beyond.html"><div><h3>Three Ways ZTNA Protects Against Ransomware</h3><p>Why VPNs have become a liability — and how Zero Trust closes the gap</p></div><span class="writing-year">2020</span></a><a class="writing-item" href="/articles/2017/black-cloud-how-the-internet-is-going-dark.html"><div><h3>Black Cloud: How the Internet is Going Dark</h3><p>Port knocking, Single Packet Authorisation, and the case for invisible infrastructure</p></div><span class="writing-year">2017</span></a></div><a class="view-all" href="/articles/">View all writing &amp; talks →</a></section>
 <section id="contact"><p class="label">Contact</p><div class="contact-block"><p>Available for speaking engagements, advisory conversations, and strategic discussions on Zero Trust, AI security governance, and enterprise transformation.</p><a class="contact-link" href="mailto:tony@fergusson.dk">tony@fergusson.dk</a></div></section>
 <footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+
+<script>
+(function(){
+  var track = document.getElementById('ticker-track');
+  if(!track) return;
+  var clone = track.cloneNode(true);
+  clone.setAttribute('aria-hidden','true');
+  track.parentElement.appendChild(clone);
+})();
+</script>
 </body>
 </html>
