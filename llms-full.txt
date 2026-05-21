@@ -1,0 +1,205 @@
+# Tony Fergusson — Full Content Index
+
+> "Those who build trust will thrive in the AI era." — Tony Fergusson
+
+## About Tony Fergusson
+
+Tony Fergusson is a Zero Trust pioneer, security leader, speaker, and advisor based in Copenhagen, Denmark. With more than 25 years of experience in networking, security, and IT leadership, he was one of the earliest adopters of Zero Trust networking principles and among the very first practitioners to implement ZTNA in production.
+
+He led MAN Energy Solutions' award-winning digital transformation to Zero Trust network architecture — a programme recognised as a reference case for large-scale security modernisation. He works across EMEA advising enterprises on Zero Trust strategy, AI governance, agentic security architecture, and the decisions that determine who thrives in an AI-native world.
+
+Tony is the creator of the **Agentic Security Edge (ASE)** framework — a governance model for AI agents that addresses constitutional constraints, dynamic scope containment, and blast radius isolation. He speaks globally on Zero Trust, AI risk, ransomware, digital sovereignty, and the transformation inertia that holds enterprises back.
+
+**Contact:** tony@fergusson.dk  
+**Location:** Copenhagen, Denmark  
+**Website:** https://tonyfergusson.com
+
+---
+
+## Core Topics & Positions
+
+### Zero Trust
+Zero Trust is not a product — it is an architectural philosophy. The principle of never trust, always verify, underpins every decision about who and what gets access to enterprise resources. Tony was among the first practitioners to implement ZTNA in production and has argued consistently that the perimeter model is not just outdated — it is actively dangerous. Security Service Edge (SSE) is the practical delivery mechanism for Zero Trust principles in a cloud-first world.
+
+### Agentic Security Edge (ASE)
+As AI agents begin operating autonomously within enterprise infrastructure, a new governance layer is required. The ASE framework defines constitutional constraints for agents — limiting what they can touch, know, and decide — through dynamic scope containment and blast radius isolation. This is the security challenge of the next decade: ensuring autonomous systems cannot be weaponised against the organisations that deploy them.
+
+### AI Governance & Digital Sovereignty
+Enterprises must define who controls their data, their models, and their AI governance frameworks. Tony advocates for "Bring Your Own Constitution" (BYOC) — organisational AI governance policies that travel with the agent, not the platform. Digital sovereignty is not just a geopolitical concern: it is an enterprise risk management imperative.
+
+### Threat Landscape
+Living-off-the-land (LOTL) attacks leverage trusted operating system tools and services to avoid detection. Living-off-the-trusted-sites (LOTS) extends this to cloud platforms. Prompt manipulation and AI-targeted attacks represent the next evolution of these techniques. Tony's analysis of WannaCry, NotPetya, and ransomware evolution has been published across major security outlets.
+
+### Legacy & Transformation Inertia
+Technical debt is a threat vector. Legacy systems that cannot be patched, retired, or isolated are open doors for adversaries. Transformation inertia — the accumulated weight of prior decisions — is the hidden force that kills digital transformation programmes before they deliver value.
+
+### Trust in the AI Era
+Trust is the defining competitive advantage of the next decade. Organisations that build trust into their architecture, their governance, and their communications will outperform those that treat it as an afterthought. This applies equally to AI systems, supply chains, and the humans who use them.
+
+---
+
+## Complete Writing Archive
+
+### 2026
+- **[The Cybersecurity Outlook for 2026: Navigating AI, Change, System Complexity and a Crisis of Trust](https://tonyfergusson.com/articles/2026-01-cybersecurity-outlook-2026.html)** — AIJourn, January 2026
+  > "We are navigating AI, change, system complexity and a crisis of trust simultaneously. The organisations that treat trust as infrastructure — not an afterthought — will be the ones still standing." — Tony Fergusson
+
+- **[Zscaler Ripple Effect Research Report](https://tonyfergusson.com/articles/2026-01-zscaler-ripple-effect-report.html)** — Zscaler, January 2026
+
+### 2025
+- **[Insider Threat: Cyberangriff von Innen](https://tonyfergusson.com/articles/2025-12-insider-threat-datensicherheit.html)** — Datensicherheit (Germany), December 2025
+- **[L'évolution du risque interne](https://tonyfergusson.com/articles/2025-12-evolution-risque-interne-silicon-fr.html)** — Silicon.fr (France), December 2025
+- **[Zenith Live Encore Amsterdam — Keynote Speaker](https://tonyfergusson.com/articles/2025-12-zenith-live-encore-amsterdam-keynote.html)** — Keynote, Amsterdam, December 2025
+- **[Building Trust in AI: Strategies to Detect, Defend, and Defuse Emerging Threats](https://tonyfergusson.com/articles/2025-11-building-trust-in-ai.html)** — Keynote, November 2025
+  > "Detecting, defending and defusing AI threats requires the same discipline we applied to Zero Trust: never assume, always verify, and eliminate implicit permissions at the perimeter." — Tony Fergusson
+- **[CrowdStrike Ejects Insider](https://tonyfergusson.com/articles/2025-11-crowdstrike-ejects-insider.html)** — The Stack, November 2025
+- **[Finland Roundtable](https://tonyfergusson.com/articles/2025-11-finland-roundtable.html)** — Helsinki, November 2025
+- **[Elite Zero Trust Forum — Helsinki](https://tonyfergusson.com/articles/2025-11-elite-zero-trust-forum-helsinki.html)** — Keynote, Helsinki, November 2025
+- **[EMEA Velocity: Inside the Mind of an Executive Panel](https://tonyfergusson.com/articles/2025-11-emea-velocity-executive-panel.html)** — Panel, November 2025
+- **[Industrial Security Conference 2025 — Copenhagen](https://tonyfergusson.com/articles/2025-11-industrial-security-conference-cph.html)** — Keynote, Copenhagen, November 2025
+- **[Computer World Cyber Security Festival — Copenhagen](https://tonyfergusson.com/articles/2025-11-computer-world-cyber-festival-cph.html)** — Keynote, Copenhagen, November 2025
+- **[Le piratage de prompts: une boîte de Pandore pour les entreprises](https://tonyfergusson.com/articles/2025-11-prompt-hijacking-forbes-fr.html)** — Forbes France, November 2025
+- **[Prompt Manipulation: Pandora's Box Has Been Opened](https://tonyfergusson.com/articles/2025-10-prompt-manipulation-sdxcentral.html)** — SDxCentral, October 2025
+  > "Prompt manipulation is not a theoretical risk. The box is open. The question is no longer whether adversaries will exploit AI systems — it is how fast your governance can respond." — Tony Fergusson
+- **[CyberChess — The Trust Crisis](https://tonyfergusson.com/articles/2025-10-cyberchess-the-trust-crisis.html)** — Keynote, Riga Latvia, October 2025
+- **[KI Prompt-Manipulation öffnet die Büchse der Pandora](https://tonyfergusson.com/articles/2025-10-ki-prompt-manipulation-ittbusiness.html)** — ITT Business (Austria), October 2025
+- **[CIONET Round Table — The End of the Firewall](https://tonyfergusson.com/articles/2025-10-cionet-roundtable-end-of-firewall.html)** — Roundtable, October 2025
+- **[Avoid Mistakes That Hackers Love — ABB ISAM 2025](https://tonyfergusson.com/articles/2025-10-abb-isam-2025.html)** — Keynote, October 2025
+- **[Gartner Benelux CIO and CISO Community Keynote — Zero Trust & AI](https://tonyfergusson.com/articles/2025-10-gartner-benelux-cio-ciso-keynote.html)** — Keynote, October 2025
+- **[Gartner Security and Risk EMEA — London](https://tonyfergusson.com/articles/2025-09-gartner-security-risk-emea-london.html)** — Keynote, London, September 2025
+- **[Nordic Cyber Summit — Copenhagen 2025](https://tonyfergusson.com/articles/2025-09-nordic-cyber-summit-cph-2025.html)** — Keynote, Copenhagen, September 2025
+- **[Juice Jacking: klinkt gevaarlijk maar is het niet](https://tonyfergusson.com/articles/2025-07-juice-jacking-ictmagazine.html)** — ICT Magazine (Netherlands), July 2025
+- **[Tony Fergusson and James Francis — ITWEB Interview South Africa](https://tonyfergusson.com/articles/2025-07-itweb-interview-south-africa.html)** — Interview, ITWEB, July 2025
+- **[Zscaler Webinar Recording](https://tonyfergusson.com/articles/2025-06-zscaler-webinar.html)** — Webinar, June 2025
+- **[Zenith Live Prague Breakout — Advanced Cloud Firewall](https://tonyfergusson.com/articles/2025-06-zenith-live-prague-breakout-cloud-firewall.html)** — Breakout, Prague, June 2025
+- **[Zenith Live Prague Breakout — ATT&CKing Risk with Zscaler](https://tonyfergusson.com/articles/2025-06-zenith-live-prague-breakout-attcking-risk.html)** — Breakout, Prague, June 2025
+- **[ITWeb Security Summit 2025 — Johannesburg](https://tonyfergusson.com/articles/2025-06-itweb-security-summit-johannesburg.html)** — Keynote, Johannesburg, June 2025
+- **[CIO & CISO Think Tank — Copenhagen](https://tonyfergusson.com/articles/2025-05-cio-ciso-think-tank-copenhagen.html)** — Roundtable, Copenhagen, May 2025
+- **[V2 Conference — Copenhagen 2025](https://tonyfergusson.com/articles/2025-05-v2-conference-copenhagen-2025.html)** — Keynote, Copenhagen, May 2025
+- **[CISO in Residence Podcast](https://tonyfergusson.com/articles/2025-04-ciso-in-residence-podcast.html)** — Podcast, Zscaler CXO REvolutionaries, April 2025
+- **[Podcast Episode — Buzzsprout](https://tonyfergusson.com/articles/2025-03-buzzsprout-podcast.html)** — Podcast, March 2025
+- **[IT Security: Das Trägheitsprinzip verhindert Transformation](https://tonyfergusson.com/articles/2025-01-it-security-traegheitsprinzip.html)** — Computer Weekly DE, January 2025
+
+### 2024
+- **[Simplicity: Complexity Resolved](https://tonyfergusson.com/articles/2024-12-simplicity-complexity-resolved.html)** — CXO REvolutionaries, December 2024
+  > "Simplicity is not the absence of sophistication — it is complexity fully resolved. Every architecture that cannot explain itself is a liability waiting to be exploited." — Tony Fergusson
+- **[Breaking Free from Inertia: The Hidden Force Holding Back Digital Transformation](https://tonyfergusson.com/articles/2024-12-breaking-free-from-inertia.html)** — EnterpriseTalk, December 2024
+  > "Inertia is the invisible force that kills transformation programmes. It is not resistance to change — it is the accumulated weight of decisions made before anyone in the room was responsible for the consequences." — Tony Fergusson
+- **[Mnemonic Security Podcast — Digital Transformation Inertia](https://tonyfergusson.com/articles/2024-12-mnemonic-security-podcast-inertia.html)** — Podcast, December 2024
+- **[Weerstand: de verborgen kracht die digitale transformatie tegenhoudt](https://tonyfergusson.com/articles/2024-12-weerstand-digitale-transformatie-techzine.html)** — Techzine NL, December 2024
+- **[Cloud Expo Netherlands — Breaking Through Inertia: Embarking on the Zero Trust Journey](https://tonyfergusson.com/articles/2024-12-cloud-expo-netherlands-zero-trust.html)** — Keynote, Amsterdam, December 2024
+- **[Heliview Cyber Security Experience](https://tonyfergusson.com/articles/2024-11-heliview-cyber-security-experience.html)** — Keynote, Netherlands, November 2024
+- **[Global Cyber Conference Breakout Session — Switzerland](https://tonyfergusson.com/articles/2024-11-global-cyber-conference-breakout-swiss.html)** — Breakout, Zurich, November 2024
+- **[Panel Discussion: The Battlefield of Cybersecurity — Advanced Cloud Protection](https://tonyfergusson.com/articles/2024-11-panel-advanced-cloud-protection.html)** — Panel, Zurich, November 2024
+- **[NCC DK Conference](https://tonyfergusson.com/articles/2024-11-ncc-dk-conference.html)** — Keynote, Copenhagen, November 2024
+- **[Europe Eyes Digital Sovereignty Despite Pessimistic Cybersecurity Outlook](https://tonyfergusson.com/articles/2024-11-europe-digital-sovereignty-cxo.html)** — CXO REvolutionaries, November 2024
+- **[NIC 2024 Conference — Oslo](https://tonyfergusson.com/articles/2024-11-nic-2024-oslo.html)** — Keynote, Oslo, November 2024
+- **[Industrial Security Conference — Copenhagen 2024](https://tonyfergusson.com/articles/2024-11-industrial-security-conference-cph-2024.html)** — Keynote, Copenhagen, November 2024
+- **[CXO Voices Podcast — Europe Eyes Digital Sovereignty](https://tonyfergusson.com/articles/2024-11-cxo-voices-podcast-digital-sovereignty.html)** — Podcast, November 2024
+- **[ComputerWorld Conference CPH — Cyber Threats](https://tonyfergusson.com/articles/2024-11-computerworld-conference-cph-cyber-threats.html)** — Keynote, Copenhagen, November 2024
+- **[Risk Hunting](https://tonyfergusson.com/articles/2024-10-risk-hunting-helpnetsecurity.html)** — Help Net Security, October 2024
+  > "Risk hunting flips the security model. Instead of waiting for an alert, you go looking for the conditions that make an attack possible. That proactive posture is what separates resilient organisations from reactive ones." — Tony Fergusson
+- **[CXO REvolutionaries EMEA Podcast Production](https://tonyfergusson.com/articles/2024-10-cxo-revolutionaries-emea-podcast.html)** — Podcast, October 2024
+- **[CISO of the Year — Denmark](https://tonyfergusson.com/articles/2024-10-ciso-of-the-year-denmark.html)** — Panel, Copenhagen, October 2024
+- **[Truesec Breakfast Copenhagen](https://tonyfergusson.com/articles/2024-10-truesec-breakfast-copenhagen.html)** — Keynote, Copenhagen, October 2024
+- **[Zscaler User Group Nordics — Copenhagen](https://tonyfergusson.com/articles/2024-10-zscaler-user-group-nordics-cph.html)** — Keynote, Copenhagen, October 2024
+- **[Norway CxO Roundtable](https://tonyfergusson.com/articles/2024-10-norway-cxo-roundtable.html)** — Roundtable, Oslo, September 2024
+- **[Nordic Cyber Summit Keynote — Copenhagen 2024](https://tonyfergusson.com/articles/2024-09-nordic-cyber-summit-cph-2024-keynote.html)** — Keynote, Copenhagen, September 2024
+- **[Nordic Cyber Summit — 2024](https://tonyfergusson.com/articles/2024-07-nordic-cyber-summit-2024.html)** — Keynote, July 2024
+- **[UK Organisations Confident They Will Meet NIS-2 Compliance Timeline](https://tonyfergusson.com/articles/2024-06-nis2-compliance-business-reporter.html)** — Business Reporter (UK), June 2024
+- **[AWS Summit Stockholm](https://tonyfergusson.com/articles/2024-06-aws-summit-stockholm.html)** — Keynote, Stockholm, June 2024
+- **[AWS Partner Summit Roundtable — Stockholm](https://tonyfergusson.com/articles/2024-06-aws-partner-summit-roundtable-stockholm.html)** — Roundtable, Stockholm, June 2024
+- **[Risk Hunting: Una Metodologia Proattiva per Migliorare la Cybersecurity](https://tonyfergusson.com/articles/2024-05-risk-hunting-securityinfo-it.html)** — SecurityInfo.it (Italy), May 2024
+- **[Nordic IT Security — Risk Hunting Keynote, Stockholm](https://tonyfergusson.com/articles/2024-05-nordic-it-security-risk-hunting-keynote.html)** — Keynote, Stockholm, May 2024
+- **[Deloitte Zero Trust and Zscaler Event](https://tonyfergusson.com/articles/2024-05-deloitte-zero-trust-zscaler-event.html)** — Keynote, May 2024
+- **[Belgium User Group — Keynote](https://tonyfergusson.com/articles/2024-05-belgium-user-group-keynote.html)** — Keynote, Brussels, May 2024
+- **[Unveiling the Dark Arts of Exploiting Trust](https://tonyfergusson.com/articles/2024-05-unveiling-dark-arts-exploiting-trust.html)** — Cloud Security Alliance, May 2024
+  > "Trust is the most exploited vulnerability in enterprise security. Adversaries don't break in — they log in, using the trusted services and identities organisations have handed them." — Tony Fergusson
+- **[Evanta Nordic CIO & CISO Executive Summit — Stockholm](https://tonyfergusson.com/articles/2024-05-evanta-nordic-cio-ciso-summit-stockholm.html)** — Keynote, Stockholm, May 2024
+- **[Risk Hunting: Unleashing the Proactive Force Inside Cybersecurity](https://tonyfergusson.com/articles/2024-05-risk-hunting-techradar.html)** — TechRadar, May 2024
+- **[V2 Conference Copenhagen — Risk Hunting Keynote](https://tonyfergusson.com/articles/2024-05-v2-conference-cph-risk-hunting.html)** — Keynote, Copenhagen, May 2024
+- **[AWS Summit — London 2024](https://tonyfergusson.com/articles/2024-04-aws-summit-london-2024.html)** — Keynote, London, April 2024
+- **[OCD Transformation Day UK — Keynote](https://tonyfergusson.com/articles/2024-04-ocd-transformation-day-uk-keynote.html)** — Keynote, London, April 2024
+- **[CIO/CISO Nordics Summit — Copenhagen](https://tonyfergusson.com/articles/2024-03-cio-ciso-nordics-summit-cph.html)** — Keynote, Copenhagen, March 2024
+- **[The Evolution of Phishing, Vishing and Quishing](https://tonyfergusson.com/articles/2024-03-evolution-phishing-vishing-quishing.html)** — TechRadar, March 2024
+- **[Zscaler CXO Roundtable — Copenhagen](https://tonyfergusson.com/articles/2024-02-zscaler-cxo-roundtable-cph.html)** — Roundtable, Copenhagen, February 2024
+- **[Who Owns Information in the Era of AI?](https://tonyfergusson.com/articles/2024-02-who-owns-information-era-ai.html)** — Cloud Security Alliance, February 2024
+  > "The AI era has not changed who creates value — it has changed who can extract it. If you do not control your data, you do not control your destiny." — Tony Fergusson
+- **[CISO Dinner Roundtable — South Africa](https://tonyfergusson.com/articles/2024-01-ciso-dinner-roundtable-south-africa.html)** — Roundtable, South Africa, January 2024
+- **[ComputerWorld Strategy and Security Conference — Aarhus](https://tonyfergusson.com/articles/2024-01-computerworld-strategy-security-aarhus.html)** — Keynote, Aarhus, January 2024
+- **[ComputerWorld Strategy and Security Conference — Copenhagen](https://tonyfergusson.com/articles/2024-01-computerworld-strategy-security-cph.html)** — Keynote, Copenhagen, January 2024
+- **[Mnemonic Security Primer 2024 Partner Conference](https://tonyfergusson.com/articles/2024-01-mnemonic-security-primer-2024.html)** — Keynote, Oslo, January 2024
+
+### 2023
+- **[Zscaler Benelux User Group — Keynote](https://tonyfergusson.com/articles/2023-12-zscaler-benelux-user-group-keynote.html)** — Keynote, December 2023
+- **[CISO Executive Roundtable — twoHundred](https://tonyfergusson.com/articles/2023-11-ciso-executive-roundtable-twohundred.html)** — Roundtable, November 2023
+- **[GovNET UK Conference](https://tonyfergusson.com/articles/2023-11-govnet-uk-conference.html)** — Keynote, London, November 2023
+- **[ComputerWorld CISO Strategy Trends 2023 — Copenhagen](https://tonyfergusson.com/articles/2023-11-computerworld-ciso-strategy-cph-2023.html)** — Keynote, Copenhagen, November 2023
+- **[Cyber Security Nordic Conference — Finland](https://tonyfergusson.com/articles/2023-11-cyber-security-nordic-finland.html)** — Keynote, Helsinki, November 2023
+- **[ISMG Proof of Concept: Assessing the US Executive Order on AI](https://tonyfergusson.com/articles/2023-11-ismg-proof-of-concept-ai-executive-order.html)** — Panel, November 2023
+- **[Evanta Benelux CISO Executive Summit — Keynote](https://tonyfergusson.com/articles/2023-10-evanta-benelux-ciso-summit-keynote.html)** — Keynote, October 2023
+- **[Evanta Benelux CISO Executive Summit — Dinner Roundtable](https://tonyfergusson.com/articles/2023-10-evanta-benelux-ciso-dinner-roundtable.html)** — Roundtable, October 2023
+- **[Gartner Security Summit — London](https://tonyfergusson.com/articles/2023-09-gartner-security-summit-london.html)** — Keynote, London, September 2023
+- **[IDC Security Forum Finland — Keynote](https://tonyfergusson.com/articles/2023-09-idc-security-forum-finland-keynote.html)** — Keynote, Helsinki, September 2023
+- **[ISMS Madrid — Keynote and Conference](https://tonyfergusson.com/articles/2023-09-isms-madrid-keynote.html)** — Keynote, Madrid, September 2023
+- **[Cyber Conference Zurich — Keynote](https://tonyfergusson.com/articles/2023-09-cyber-conference-zurich-keynote.html)** — Keynote, Zurich, September 2023
+- **[Bin beim Angeln — A Fool with a Tool (Silicon DE)](https://tonyfergusson.com/articles/2023-07-fool-with-a-tool-silicon-de.html)** — Silicon DE (Germany), July 2023
+- **[TCS Cyber Symposium 2023 — Partner Keynote](https://tonyfergusson.com/articles/2023-07-tcs-cyber-symposium-partner-keynote.html)** — Keynote, July 2023
+- **[ZL2023 Breakout: Best Practices — How to Define Optimal Policy](https://tonyfergusson.com/articles/2023-06-zl2023-breakout-optimal-policy.html)** — Breakout, Zenith Live, June 2023
+- **[Crowdstrike Day Keynote — Denmark](https://tonyfergusson.com/articles/2023-06-crowdstrike-day-keynote-denmark.html)** — Keynote, Copenhagen, June 2023
+- **[Crowdstrike Day Keynote — Sweden](https://tonyfergusson.com/articles/2023-06-crowdstrike-day-keynote-sweden.html)** — Keynote, Stockholm, June 2023
+- **[HELIVIEW Cyber Resilience Conference — Belgium](https://tonyfergusson.com/articles/2023-06-heliview-cyber-resilience-belgium.html)** — Breakout, Brussels, June 2023
+- **[Evanta Nordic CIO & CISO Executive Summit — Stockholm](https://tonyfergusson.com/articles/2023-05-evanta-nordic-cio-ciso-summit-stockholm.html)** — Keynote, Stockholm, May 2023
+- **[V2 Security Conference Copenhagen — Breakout: What is True Zero Trust?](https://tonyfergusson.com/articles/2023-05-v2-security-conference-cph-breakout.html)** — Breakout, Copenhagen, May 2023
+- **[A Fool with a Tool is Still a Fool: A Cyber Take](https://tonyfergusson.com/articles/2023-04-fool-with-a-tool-csa.html)** — Cloud Security Alliance, April 2023
+  > "Technology without strategy is noise with a price tag. Buying the right tool for the wrong architecture is how organisations end up with a more expensive version of the same problem." — Tony Fergusson
+- **[One True Zero Trust Roadshow — Opening Keynote](https://tonyfergusson.com/articles/2023-03-one-true-zero-trust-roadshow-keynote.html)** — Keynote, March 2023
+- **[A Fool with a Tool is Still a Fool — Dark Reading](https://tonyfergusson.com/articles/2023-02-fool-with-a-tool-dark-reading.html)** — Dark Reading, February 2023
+- **[Why Your SOC Won't Save You](https://tonyfergusson.com/articles/2023-01-why-your-soc-wont-save-you.html)** — CXO REvolutionaries, January 2023
+  > "A SOC that monitors a perimeter that no longer exists is not security — it is theatre. The alert volume goes up, the signal goes down, and the adversary has already won." — Tony Fergusson
+
+### 2022
+- **[One True Zero Roadshow — Brussels Keynote](https://tonyfergusson.com/articles/2022-12-one-true-zero-roadshow-brussels-keynote.html)** — Keynote, Brussels, December 2022
+- **[One True Zero Roadshow — Stockholm Keynote](https://tonyfergusson.com/articles/2022-12-one-true-zero-roadshow-stockholm-keynote.html)** — Keynote, Stockholm, December 2022
+- **[One True Zero Roadshow — Amsterdam Keynote](https://tonyfergusson.com/articles/2022-12-one-true-zero-roadshow-amsterdam-keynote.html)** — Keynote, Amsterdam, December 2022
+- **[IDC Future of Infrastructure 2022](https://tonyfergusson.com/articles/2022-11-idc-future-of-infrastructure.html)** — Keynote, November 2022
+- **[DACH User Group Future of AI/ML — Keynote](https://tonyfergusson.com/articles/2022-11-dach-user-group-ai-ml-keynote.html)** — Keynote, November 2022
+- **[Evanta CIO and CISO Exec Summit — Benelux](https://tonyfergusson.com/articles/2022-10-evanta-cio-ciso-exec-summit-benelux.html)** — Keynote, October 2022
+- **[IDC Stockholm IT Security 2022](https://tonyfergusson.com/articles/2022-09-idc-stockholm-it-security.html)** — Keynote, Stockholm, September 2022
+- **[UK Gartner Risk and Security Summit — Keynote](https://tonyfergusson.com/articles/2022-09-uk-gartner-risk-security-summit-keynote.html)** — Keynote, London, September 2022
+- **[ZL2022: SSE Breakout — London](https://tonyfergusson.com/articles/2022-06-zl2022-sse-breakout-london.html)** — Breakout, Zenith Live, London, June 2022
+- **[NotPetya and Learning the Lessons of WannaCry](https://tonyfergusson.com/articles/2022-06-notpetya-lessons-wannacry.html)** — CXO REvolutionaries, June 2022
+  > "NotPetya was not ransomware. It was a weapon wearing ransomware's clothes. The organisations that understood that distinction recovered. The ones that did not are still paying." — Tony Fergusson
+- **[Shell Imagine the Future — Panel Discussion: Energy Transition through Digitalisation](https://tonyfergusson.com/articles/2022-06-shell-imagine-future-panel.html)** — Panel, June 2022
+- **[Mnemonic Security Podcast — Zero Trust vs Castle and Moat](https://tonyfergusson.com/articles/2022-05-mnemonic-podcast-zero-trust-vs-castle.html)** — Podcast, May 2022
+- **[WannaCry Five Years: Revisiting My Revelation](https://tonyfergusson.com/articles/2022-05-wannacry-five-years.html)** — CXO REvolutionaries, May 2022
+  > "WannaCry was a gift. A brutal, expensive, globally destructive gift — but a gift nonetheless. It proved that perimeter security was already dead. Most organisations just had not received the memo." — Tony Fergusson
+- **[Powering the Modern Workplace with Microsoft and Zscaler — Partner Webinar](https://tonyfergusson.com/articles/2022-04-microsoft-zscaler-partner-webinar.html)** — Webinar, April 2022
+- **[Coffee and Zero Trust Roundtable — Business Cases for Zero Trust Access](https://tonyfergusson.com/articles/2022-04-coffee-zero-trust-roundtable.html)** — Roundtable, April 2022
+- **[Digital Round Table: Tightening IT-Security — Creating Enterprise Agility](https://tonyfergusson.com/articles/2022-03-digital-roundtable-tightening-it-security.html)** — Roundtable, March 2022
+- **[Security Service Edge (SSE) — The Enabler for Zero Trust](https://tonyfergusson.com/articles/2022-03-security-service-edge-enabler-zero-trust.html)** — Article, March 2022
+- **[Nordic Roundtable and One-to-Ones](https://tonyfergusson.com/articles/2022-02-nordic-roundtable.html)** — Roundtable, February 2022
+- **[Stop Trying to Make Firewalls Happen: What IT Can Learn from Tesla](https://tonyfergusson.com/articles/2022-01-stop-trying-make-firewalls-happen.html)** — CXO REvolutionaries, January 2022
+  > "The firewall was designed for a world that no longer exists — where the data, the users, and the threats were all in the same place. That world is gone. The sooner we stop pretending otherwise, the safer we will all be." — Tony Fergusson
+- **[Ransomware Tuesday Webinar](https://tonyfergusson.com/articles/2022-01-ransomware-tuesday-webinar.html)** — Webinar, Zscaler 20 Minute Tuesdays, January 2022
+
+### 2021
+- **[Transformation Predictions for 2022](https://tonyfergusson.com/articles/2021-12-transformation-predictions-2022.html)** — UK Tech News, December 2021
+- **[Evanta Nordic CIO Townhall](https://tonyfergusson.com/articles/2021-11-evanta-nordic-cio-townhall.html)** — Keynote, November 2021
+- **[Evanta — Keeping up with Innovation Through a Hybrid or Remote Workforce](https://tonyfergusson.com/articles/2021-11-evanta-keeping-up-with-innovation.html)** — Keynote, November 2021
+- **[Evanta Nordic CIO Virtual Executive Summit Keynote](https://tonyfergusson.com/articles/2021-10-evanta-nordic-cio-virtual-summit-keynote.html)** — Keynote, October 2021
+- **[Evanta Keynote CIO/CISO and Panel Discussion](https://tonyfergusson.com/articles/2021-10-evanta-keynote-cio-ciso-panel.html)** — Keynote, October 2021
+- **[CIONET Roundtable: Tightening Security — Evolution or Revolution?](https://tonyfergusson.com/articles/2021-09-cionet-roundtable-tightening-security.html)** — Roundtable, September 2021
+- **[Go Dark: Reduce Your Attack Surface](https://tonyfergusson.com/articles/2021-07-go-dark-reduce-attack-surface.html)** — Zscaler Blog, July 2021
+  > "The best attack surface is no attack surface. Going dark — making your infrastructure invisible to adversaries — is not an advanced tactic. It is the logical conclusion of Zero Trust thinking." — Tony Fergusson
+- **[CxO Carbon Footprint Panel Discussion](https://tonyfergusson.com/articles/2021-07-cxo-carbon-footprint-panel.html)** — Panel, July 2021
+- **[The True Cost of Legacy Technology](https://tonyfergusson.com/articles/2021-04-true-cost-legacy-technology.html)** — LinkedIn, April 2021
+  > "Technical debt is not a balance sheet item — it is a threat vector. Every system you cannot patch, every protocol you cannot retire, is a door your adversaries can open and you cannot close." — Tony Fergusson
+- **[The Carbon Cost of Remote Working](https://tonyfergusson.com/articles/2021-02-carbon-cost-remote-working.html)** — Open Access Government, February 2021
+
+### 2020
+- **[Go Dark: Reduce Your Attack Surface](https://tonyfergusson.com/articles/2020-09-go-dark-attack-surface-linkedin.html)** — LinkedIn, September 2020
+
+---
+
+*Last updated: May 2026. Full archive at https://tonyfergusson.com/articles/*
