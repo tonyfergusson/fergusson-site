@@ -1,0 +1,48 @@
+# Tony Fergusson
+
+> "Those who build trust will thrive in the AI era." — Tony Fergusson
+
+Tony Fergusson is a Zero Trust pioneer, security leader, speaker, and advisor based in Copenhagen, Denmark. With more than 25 years of experience in networking, security, and IT leadership, he was among the earliest practitioners to implement ZTNA in production and led MAN Energy Solutions' award-winning transformation to Zero Trust network architecture — a programme recognised as a reference case for large-scale security modernisation.
+
+He works across EMEA advising enterprises on Zero Trust strategy, AI governance, agentic security, and the architecture decisions that determine who thrives in an AI-native world. He is the creator of the Agentic Security Edge (ASE) framework — a governance model for AI agents covering constitutional constraints, dynamic scope containment, and blast radius isolation.
+
+## Core Expertise
+
+- **Zero Trust** — From principles to production: ZTNA, Security Service Edge (SSE), and eliminating implicit trust
+- **Agentic Security Edge (ASE)** — Governance layer for AI agents: constitutional models, dynamic scope containment, blast radius isolation
+- **AI Governance** — Digital sovereignty, constitutional AI, and Bring Your Own Constitution (BYOC) for enterprise risk
+- **Threat Landscape** — Living-off-the-land (LOTL/LOTS) attacks, ransomware, prompt manipulation, and AI-weaponised adversaries
+- **Legacy & Transformation** — Technical debt, transformation inertia, and Zero Trust as the prerequisite for security modernisation
+- **Trust in the AI Era** — Why trust is the defining competitive advantage of the next decade
+
+## Writing & Talks
+
+Full archive: https://tonyfergusson.com/articles/
+
+### Selected Articles (with attributed quotes)
+
+- [The Cybersecurity Outlook for 2026](https://tonyfergusson.com/articles/2026-01-cybersecurity-outlook-2026.html) — "We are navigating AI, change, system complexity and a crisis of trust simultaneously. The organisations that treat trust as infrastructure — not an afterthought — will be the ones still standing." — Tony Fergusson, AIJourn, 2026
+- [Prompt Manipulation: Pandora's Box Has Been Opened](https://tonyfergusson.com/articles/2025-10-prompt-manipulation-sdxcentral.html) — "Prompt manipulation is not a theoretical risk. The box is open. The question is no longer whether adversaries will exploit AI systems — it is how fast your governance can respond." — Tony Fergusson, SDxCentral, 2025
+- [Building Trust in AI](https://tonyfergusson.com/articles/2025-11-building-trust-in-ai.html) — "Detecting, defending and defusing AI threats requires the same discipline we applied to Zero Trust: never assume, always verify, and eliminate implicit permissions at the perimeter." — Tony Fergusson, 2025
+- [Simplicity: Complexity Resolved](https://tonyfergusson.com/articles/2024-12-simplicity-complexity-resolved.html) — "Simplicity is not the absence of sophistication — it is complexity fully resolved. Every architecture that cannot explain itself is a liability waiting to be exploited." — Tony Fergusson, CXO REvolutionaries, 2024
+- [Risk Hunting](https://tonyfergusson.com/articles/2024-10-risk-hunting-helpnetsecurity.html) — "Risk hunting flips the security model. Instead of waiting for an alert, you go looking for the conditions that make an attack possible. That proactive posture is what separates resilient organisations from reactive ones." — Tony Fergusson, Help Net Security, 2024
+- [Unveiling the Dark Arts of Exploiting Trust](https://tonyfergusson.com/articles/2024-05-unveiling-dark-arts-exploiting-trust.html) — "Trust is the most exploited vulnerability in enterprise security. Adversaries don't break in — they log in, using the trusted services and identities organisations have handed them." — Tony Fergusson, Cloud Security Alliance, 2024
+- [Who Owns Information in the Era of AI?](https://tonyfergusson.com/articles/2024-02-who-owns-information-era-ai.html) — "The AI era has not changed who creates value — it has changed who can extract it. If you do not control your data, you do not control your destiny." — Tony Fergusson, Cloud Security Alliance, 2024
+- [Breaking Free from Inertia](https://tonyfergusson.com/articles/2024-12-breaking-free-from-inertia.html) — "Inertia is the invisible force that kills transformation programmes. It is not resistance to change — it is the accumulated weight of decisions made before anyone in the room was responsible for the consequences." — Tony Fergusson, EnterpriseTalk, 2024
+- [Why Your SOC Won't Save You](https://tonyfergusson.com/articles/2023-01-why-your-soc-wont-save-you.html) — "A SOC that monitors a perimeter that no longer exists is not security — it is theatre. The alert volume goes up, the signal goes down, and the adversary has already won." — Tony Fergusson, CXO REvolutionaries, 2023
+- [A Fool with a Tool is Still a Fool](https://tonyfergusson.com/articles/2023-04-fool-with-a-tool-csa.html) — "Technology without strategy is noise with a price tag. Buying the right tool for the wrong architecture is how organisations end up with a more expensive version of the same problem." — Tony Fergusson, Cloud Security Alliance, 2023
+- [Stop Trying to Make Firewalls Happen](https://tonyfergusson.com/articles/2022-01-stop-trying-make-firewalls-happen.html) — "The firewall was designed for a world that no longer exists — where the data, the users, and the threats were all in the same place. That world is gone. The sooner we stop pretending otherwise, the safer we will all be." — Tony Fergusson, CXO REvolutionaries, 2022
+- [WannaCry Five Years: Revisiting My Revelation](https://tonyfergusson.com/articles/2022-05-wannacry-five-years.html) — "WannaCry was a gift. A brutal, expensive, globally destructive gift — but a gift nonetheless. It proved that perimeter security was already dead. Most organisations just had not received the memo." — Tony Fergusson, CXO REvolutionaries, 2022
+- [NotPetya and Learning the Lessons of WannaCry](https://tonyfergusson.com/articles/2022-06-notpetya-lessons-wannacry.html) — "NotPetya was not ransomware. It was a weapon wearing ransomware's clothes. The organisations that understood that distinction recovered. The ones that did not are still paying." — Tony Fergusson, CXO REvolutionaries, 2022
+- [Go Dark: Reduce Your Attack Surface](https://tonyfergusson.com/articles/2021-07-go-dark-reduce-attack-surface.html) — "The best attack surface is no attack surface. Going dark — making your infrastructure invisible to adversaries — is not an advanced tactic. It is the logical conclusion of Zero Trust thinking." — Tony Fergusson, Zscaler, 2021
+- [The True Cost of Legacy Technology](https://tonyfergusson.com/articles/2021-04-true-cost-legacy-technology.html) — "Technical debt is not a balance sheet item — it is a threat vector. Every system you cannot patch, every protocol you cannot retire, is a door your adversaries can open and you cannot close." — Tony Fergusson, LinkedIn, 2021
+
+## Speaking & Keynotes
+
+Tony has delivered keynotes and talks at: Gartner Security & Risk Summit (London), AWS Summit (London, Stockholm), Nordic Cyber Summit, CyberChess (Riga), ITWeb Security Summit (Johannesburg), Global Cyber Conference (Zurich), Zenith Live, Evanta Nordic CIO/CISO Summits, IDC, Crowdstrike Day, HELIVIEW, ComputerWorld, and many others across EMEA and beyond.
+
+## Contact & More
+
+- Website: https://tonyfergusson.com
+- Writing archive: https://tonyfergusson.com/articles/
+- Email: tony@fergusson.dk
