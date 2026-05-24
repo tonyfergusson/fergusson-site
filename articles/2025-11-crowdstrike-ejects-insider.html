@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrowdStrike Ejects Insider — Tony Fergusson</title>
+<meta name="description" content="Insider risk is a huge headache for CISOs. Tony Fergusson on why every attack now begins to look like an insider attack.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-hero{width:100%;max-height:380px;object-fit:cover;display:block}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
+.author-info{display:flex;flex-direction:column;gap:2px}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
+.author-date{font-size:13px;color:var(--text-tertiary)}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul{margin:0 0 1.5rem 1.5rem}
+.article-body ul li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body blockquote{border-left:2px solid var(--border);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:var(--text-secondary)}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span id="theme-icon">☀︎</span>
+    </button>
+  </div>
+</nav>
+
+<img class="article-hero" src="https://storage.ghost.io/c/ea/a0/eaa014ba-c39c-4d9a-a133-41045822028c/content/images/size/w1200/2025/11/brian-de-groodt-7cAFgJVlVDE-unsplash.jpg" alt="CrowdStrike ejects insider">
+
+<div class="article-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+
+  <div class="article-meta">
+    <h1>$25,000 for… Jail? CrowdStrike Ejects Insider</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">24 November 2025 &middot; Originally published in The Stack · By Edward Targett</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Article</span>
+      <span class="article-tag">The Stack</span>
+      <span class="article-tag">Insider Threat</span>
+      <span class="article-tag">Zero Trust</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>Cybersecurity firm CrowdStrike says it "identified and terminated" a potentially malicious insider in October, after they were caught sharing screenshots externally — reportedly with cybercrime group ShinyHunters. The "suspicious insider" was fired following an internal investigation. CrowdStrike stated its systems were never compromised and customers remained protected throughout, and it has brought in law enforcement.</p>
+
+    <p>The threat group told Bleeping Computer that they had offered the insider $25,000 for access to the company's network — and that he had shared "SSO authentication cookies" but been caught before they could use them. The incident casts a fresh light on insider risk, among the biggest concerns of CISOs, particularly where lower-paid support desk staff are potentially susceptible to bribes for network access, and visibility over sub-contracted staff or those brought in via M&A frequently has gaps.</p>
+
+    <h2>Insider risk: Specialist help needed?</h2>
+
+    <p>CrowdStrike has since re-advertised for an insider investigations analyst. It is not alone in recruiting specifically to target insider risk, with open roles advertised at rates ranging from $66,000 to $360,000+. A quick look at the market shows that Anthropic, Blackstone, Deloitte, Northern Trust, OpenAI, Target, and TikTok are among those also currently hiring in this space.</p>
+
+    <p>Some roles have a specifically cybersecurity or software tooling focus; others target "policy violations, dual employment, and reputational risk."</p>
+
+    <h2>"You can't 'patch' people"</h2>
+
+    <p>Building robust insider threat frameworks is challenging and often leaves CISOs encountering what one recently described as "taboos" around trust, loyalty and corporate culture. Tackling it is made even more difficult due to the extensive use of stolen credentials and identity theft in attacks — with "outsiders" hiding behind "insiders'" identities in hacks.</p>
+
+    <p>As Sysdig's Crystal Morin told <em>The Stack</em>: "Insider threat analysis is often nuanced and requires human discretion, something that cannot simply be programmed into detection alerts or AI-driven triage… An unusual data download might signal exfiltration, but it might also just be an employee preparing to work offline on a long flight. You can't 'patch' people, but you can design layered, collaborative security and cultural strategies that safeguard both your workforce and your organization."</p>
+
+    <p>Netskope CISO James Robinson noted the importance of preventative efforts and of "connecting with other teams to understand life events that might be a trigger for someone becoming an insider threat." He emphasised that an insider threat programme should be "very approachable, from management down, so the rest of the workforce becomes a useful partner." He added: "For technical frameworks, Zero Trust is the best foundational technical approach to address insider risk. You are looking to give every user just the right amount of access to do their jobs, and then continuously verifying that access."</p>
+
+    <p>Tony Fergusson, CISO-in-residence at Zscaler, agrees. Sharing comment on insider risk as part of a story <em>The Stack</em> was working on prior to the CrowdStrike incident, he added:</p>
+
+    <blockquote>
+      <p>"As adversaries increasingly live off the land and use trusted sites to hide in plain sight, they are logging in rather than hacking their way in. Every attack now begins to look like an insider attack, whether or not the actor is actually employed by you. Minimising attack paths by embedding trust into your environment through Zero Trust, and then adding noise through Negative Trust, is the way forward. We must become far better at detecting malicious behaviour, especially now that adversaries are willing to pay employees to leak data or simply hand over authentication cookies from their browsers."</p>
+    </blockquote>
+
+    <div class="source-note">
+      <p>Originally published in <a href="https://www.thestack.technology/crowdstrike-ejects-insider/" target="_blank" rel="noopener">The Stack</a> · 24 November 2025 · By Edward Targett.</p>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');
+  function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}
+  applyTheme(localStorage.getItem('theme')||getSystemTheme());
+  btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+})();
+</script>
+</body>
+</html>
