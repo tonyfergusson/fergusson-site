@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simplicity: Complexity Resolved — Tony Fergusson</title>
+<meta name="description" content="Zero trust architecture isn't rocket science. But, as in rocket science, stripping away unnecessary functions is a step toward simpler, more elegant solutions.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-hero{width:100%;max-height:380px;object-fit:cover;display:block}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
+.author-info{display:flex;flex-direction:column;gap:2px}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
+.author-date{font-size:13px;color:var(--text-tertiary)}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul,.article-body ol{margin:0 0 1.5rem 1.5rem}
+.article-body li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body blockquote{border-left:2px solid var(--border);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:var(--text-secondary)}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☀︎</span></button>
+  </div>
+</nav>
+
+<img class="article-hero" src="https://cms.zscaler.com/sites/default/files/images/blogs/REv-CC-ZeroTrust-SimplicityIsComplexityResolved%402x.jpg" alt="Simplicity is complexity resolved">
+
+<div class="article-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+  <div class="article-meta">
+    <h1>Simplicity: Complexity Resolved</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">19 December 2024 &middot; CXO REvolutionaries, Zscaler</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Article</span>
+      <span class="article-tag">CXO REvolutionaries</span>
+      <span class="article-tag">Zero Trust</span>
+    </div>
+  </div>
+  <div class="article-body">
+    <blockquote><p>"Any intelligent fool can make things bigger and more complex. It takes a touch of genius — and a lot of courage — to move in the opposite direction." — Albert Einstein</p></blockquote>
+    <p>Last October, SpaceX made history by successfully catching its Super Heavy rocket in a pair of robotic arms known as "chopsticks." This seminal achievement was made possible not by adding complexity to the most advanced rockets the world has ever seen, but by stripping it away. CISOs should take note.</p>
+    <p>The workhorse powering this achievement was SpaceX's third-generation Raptor engine. Raptor 3 sports a far cleaner look than its predecessors. By using new techniques and reconsidering the need for exposed metal hardware and a heat shield, the engine weighs significantly less than earlier models, delivering 50% more thrust and 25% less weight. The streamlined design may also enhance lifespan and manufacturability.</p>
+    <h2>Complexity is the enemy of security</h2>
+    <p>SpaceX achieved the once-unthinkable not by adding components — and complexity — to its engine design, but by eliminating and optimising existing ones. Further, Lusser's Law tells us the failure rate for complex systems is the product of each component's probability of failure. Reducing the number of components reduces the risk of failure.</p>
+    <p>This should cause CISOs to reevaluate how we think about our IT environments. Consider the many components that make up legacy network security architecture — firewalls, SWGs, load balancers, DDoS mitigation, VDI, VPN, DLP — often in multiple instances per inbound/outbound DMZ. Each of these tools has a failure rate, and the failure rate of the complete system is higher than that of any individual component. "Failure" can take the form of a CVE, latency, inefficiency, impaired performance, defect, or end-of-life — the list is as long as our imaginations allow.</p>
+    <p>Many security executives have inherited these tools without a complete understanding of how they actually secure their environments. Another lock on the safe is always welcome added protection, right? Not so fast. It may, in fact, be just another point of failure vulnerable to any cybercriminal who has studied its weaknesses. More devices and a larger attack surface means more options for attackers.</p>
+    <h2>Decoupling security from the network</h2>
+    <p>Zero trust is an approach that de-emphasises perimeter-based protection — and all of its requisite point products — in favour of per-resource policy enforcement when a user requests access to a company asset. When conducted in the cloud, this brings the same benefits enjoyed by any other SASE application: a vendor's ability to specialise in its core value proposition, reduced reliance on manual procedures from clients, and a "cloud effect" of protection from known vulnerabilities. Single-scan, multi-action (SSMA) architecture means security checks happen more efficiently than service-chaining multiple point products.</p>
+    <p>Importantly, true zero trust cannot be a lift-and-shift of previous security capabilities to the cloud. Firewall and VPN vendors have tried these moves before and have been plagued by the same vulnerabilities affecting other security appliances. Various vendor-specific zero-day threats continue to add risk regardless of whether the underlying capabilities are hardware or cloud-based.</p>
+    <p>True zero trust architecture decouples security functions from the network, turning the network into simply the "plumbing" responsible for moving packets as quickly and reliably as possible. Traditional security DMZ functions can then be processed in parallel without the need for service chaining. Connection information is shared into memory where multiple, parallel engines apply policy checks to the data — providing the ability to build simple business policies, rather than complex network policies.</p>
+    <p>Zero trust architecture isn't rocket science. But, as in rocket science, stripping away unnecessary functions and streamlining existing ones is a step in the direction of simpler, more elegant solutions. So don't be afraid to aim high.</p>
+    <div class="source-note">
+      <p>Originally published on <a href="https://www.zscaler.com/blogs/cxo-insights/simplicity-complexity-resolved" target="_blank" rel="noopener">CXO REvolutionaries, Zscaler</a> · 19 December 2024.</p>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+<script>
+(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+</script>
+</body>
+</html>

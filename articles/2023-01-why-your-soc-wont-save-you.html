@@ -4,48 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Why Your SOC Won't Save You — Tony Fergusson</title>
+<meta name="description" content="Some think of a security operations center as the cybersecurity equivalent of making it. Zscaler CISO Tony Fergusson has his doubts.">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--tag-bg:rgba(0,0,0,0.05)}
-@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
 nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
 .nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
-.nav-links{display:flex;gap:2rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
-.entry-hero-placeholder{width:100%;height:240px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:64px}
-.entry-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-hero{width:100%;max-height:380px;object-fit:cover;display:block}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
 .back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
-h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
 .author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
 .author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
 .author-info{display:flex;flex-direction:column;gap:2px}
-.author-name{font-size:14px;font-weight:500}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
 .author-date{font-size:13px;color:var(--text-tertiary)}
-.entry-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
-.entry-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
-.entry-tag.format{font-weight:600;color:var(--text-primary)}
-.entry-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
-.entry-body p{margin-bottom:1.5rem}
-.source-card{margin-top:3rem;padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--bg-secondary)}
-.source-card-label{font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:0.5rem}
-.source-card-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:15px;font-weight:500;color:var(--text-primary);text-decoration:none}
-.source-card-link svg{flex-shrink:0;opacity:0.5}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul,.article-body ol{margin:0 0 1.5rem 1.5rem}
+.article-body li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
 footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
-@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.entry-container{padding:2rem 1rem 4rem}}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
 </style>
 </head>
 <body>
-<nav><a class="nav-name" href="/">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
-<div class="entry-hero-placeholder">📝</div>
-<div class="entry-container">
-<a class="back-link" href="/articles/">← All writing</a>
-<h1>Why Your SOC Won't Save You</h1>
-<div class="author-row"><img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson"><div class="author-info"><span class="author-name">Tony Fergusson</span><span class="author-date">27 Jan 2023</span></div></div>
-<div class="entry-tags"><span class="entry-tag format">Article</span><span class="entry-tag">CXO REvolutionaries</span></div>
-<div class="entry-body"><!-- CONTENT START --><!-- CONTENT END --></div>
-<div class="source-card"><p class="source-card-label">Original source</p><a class="source-card-link" href="https://revolutionaries.zscaler.com/insights/why-your-soc-wont-save-you" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on revolutionaries.zscaler.com</a></div>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☀︎</span></button>
+  </div>
+</nav>
+
+<img class="article-hero" src="https://cms.zscaler.com/sites/default/files/images/blogs/REv-CC-FutureProofIT-WhyYourSOCWontSaveYou-01%402x_0.jpg" alt="Why your SOC won't save you">
+
+<div class="article-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+  <div class="article-meta">
+    <h1>Why Your SOC Won't Save You</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">27 January 2023 &middot; CXO REvolutionaries, Zscaler</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Article</span>
+      <span class="article-tag">CXO REvolutionaries</span>
+      <span class="article-tag">Zero Trust</span>
+      <span class="article-tag">SOC</span>
+    </div>
+  </div>
+  <div class="article-body">
+    <h2>Are SOCs just the emperor's new clothes?</h2>
+    <p>It's sometimes suggested in this industry that a security operations center (SOC) is a sign of superior cybersecurity and business success. But is that really wisdom? Or is it a false assumption getting more and more false every year?</p>
+    <p>See if this story sounds familiar: a company makes a splash, swiftly grows its market and user base, and posts a few good quarters. The media anoints it a unicorn and throws confetti. But along with all that attention, this company soon finds itself the focus of malicious actors — hackers, malware, criminal organisations, and even state-sponsored groups. It decides to invest in a SOC.</p>
+    <p>If you're like me, that conjures up images from the Mission Impossible franchise: hundreds of giant screens full of scrolling multicoloured code, in cavernous rooms populated by specialists with infinite skills and a grim capacity to deal with any threat. If you have a SOC, that means you've made it into the winner's circle. Or so goes the common wisdom.</p>
+    <p>The problem is that the common wisdom, in my opinion, is at best out of date and at worst grossly misleading. While a SOC still has its uses — active defence, red teaming, patch management — I believe their capabilities regarding threat detection and response are greatly overblown for most organisations. That's problematic given the complexity of modern network topologies, the range of security threats, and the consequences of a breach.</p>
+    <h2>Very few organisations are prepared to cope with a SOC-supplied data tsunami</h2>
+    <p>Modern data volumes are off the scale. Data today stems from more sources, faster than ever before — and the rate of change is headed up, not down. How does even the best-equipped SOC find the true security events inside that tsunami? It's less like finding a needle in a haystack, and more like finding ten straws of hay in a hundred floating haystacks distributed across a tidal wave, which, arranged in the right way, spell the word "breach."</p>
+    <p>According to the threat intelligence firm Mandiant, SOCs only generate alerts for 9% of attacks, and 45% of those alerts are ultimately false positives. This data tsunami floods the SOC with distractions, preventing the team from focusing its energy on genuine security issues requiring immediate attention.</p>
+    <h2>What kind of zero-to-sixty time has your SOC team got?</h2>
+    <p>The security vendor CrowdStrike popularised a response framework known as the 1-10-60 challenge: detect threats within one minute, understand the threat within 10 minutes, and remediate within 60. These numbers are based on analysis that found the average breakout time for hackers — from initial infection to lateral spread — was one hour and 38 minutes in 2021.</p>
+    <p>But 1-10-60 is an unrealistic response time for most organisations. Detection, response, and remediation times are typically far slower in practice, especially given the difficulties of staffing a SOC in today's cybersecurity talent crunch. A major supply-chain hack illustrates this perfectly: a trusted and widely-deployed network administration tool with compromised source code went undetected for the better part of a year, giving a state-sponsored adversary months to inspect the networks of government organisations, the military, and leading businesses. All the SOC talent combined still did not have the resources to swiftly identify and deal with it.</p>
+    <h2>Building the better mousetrap</h2>
+    <p>So what do I recommend instead of a traditional SOC? A few things working in concert:</p>
+    <ul>
+      <li>A <strong>security architecture</strong> flexible enough to support any network topology of any scope, including limitless remote workers, external data sources, and third-party clouds.</li>
+      <li>A <strong>comprehensive zero-trust implementation</strong> ensuring all network transactions involve only verified, validated entities with appropriate privileges.</li>
+      <li>A <strong>policy enforcement point between the organisation's infrastructure and the internet</strong> so that assets are never exposed and can never directly be attacked.</li>
+      <li><strong>AI and machine learning capabilities</strong> to augment human threat hunting and analysis, backed by massive datasets and sophisticated models.</li>
+      <li>An <strong>analytical assessment of detected threats</strong> — malicious actors aren't just blocked, they're treated as a source of security intelligence that informs and improves the entire strategy.</li>
+      <li><strong>Deception technology</strong> as the cheese in the mousetrap — rather than passively waiting for intruders, proactively lure them to traps you've already set. This delivers high-fidelity alerts and can automatically quarantine users who take the bait.</li>
+    </ul>
+    <p>No security strategy is perfect. But it's my firm opinion that these solutions will deliver faster, more effective, and more affordable protection than any conventional SOC is likely to. And over time, as data volumes and threat sophistication continue to scale, this approach will only grow in value.</p>
+    <div class="source-note">
+      <p>Originally published on <a href="https://www.zscaler.com/blogs/cxo-insights/why-your-soc-wont-save-you" target="_blank" rel="noopener">CXO REvolutionaries, Zscaler</a> · 27 January 2023.</p>
+    </div>
+  </div>
 </div>
 <footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+<script>
+(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+</script>
 </body>
 </html>
