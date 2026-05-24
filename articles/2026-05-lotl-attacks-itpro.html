@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Protect Your Business from Living Off the Land Attacks — Tony Fergusson</title>
+<meta name="description" content="A greater focus on identity management and incident response is key for businesses as attackers adopt this new methodology.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-hero{width:100%;max-height:380px;object-fit:cover;display:block}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
+.author-info{display:flex;flex-direction:column;gap:2px}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
+.author-date{font-size:13px;color:var(--text-tertiary)}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul{margin:0 0 1.5rem 1.5rem}
+.article-body ul li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body blockquote{border-left:2px solid var(--border);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:var(--text-secondary)}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span id="theme-icon">☀︎</span>
+    </button>
+  </div>
+</nav>
+
+<img class="article-hero" src="https://cdn.mos.cms.futurecdn.net/aXognGP4UVUiWoAxxh57qJ.jpg" alt="A hand touching a glowing white padlock in a dark environment">
+
+<div class="article-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+
+  <div class="article-meta">
+    <h1>How to Protect Your Business from Living Off the Land Attacks</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">19 May 2026 &middot; Originally published in IT Pro · By Kate O'Flaherty</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Feature</span>
+      <span class="article-tag">IT Pro</span>
+      <span class="article-tag">LOTL</span>
+      <span class="article-tag">Threat Landscape</span>
+      <span class="article-tag">Zero Trust</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>Cyber attacks are typically associated with data theft and extortion, but another threat can cause just as much damage. As geopolitical tensions rise across the globe, state-sponsored adversaries are preferring to hide in systems, going unnoticed for months or years after the initial compromise.</p>
+
+    <p>To perform these so-called living off the land (LotL) attacks, attackers are weaponizing legitimate software and infrastructure to lie in wait. This trend is seeing tactics shift away from data breaches to more sophisticated espionage and disruptive operations, according to a 2026 report from Cloudflare.</p>
+
+    <h2>Living off the land attacks: long-term campaigns</h2>
+
+    <p>Cyber attacks usually take advantage of security weaknesses. However, living off the land attacks are different: they are growing in response to organizations strengthening their overall cybersecurity posture. "Organizations have made significant progress in their ability to detect threats and patch systems more effectively," Tony Fergusson, CISO in residence at Zscaler, told <em>ITPro</em>. "Consequently, adversaries are being forced to be more stealthy to exploit data, and they're doing this by leveraging legitimate tools and processes."</p>
+
+    <p>With living off the land attacks, attackers deliberately avoid drawing attention to themselves by using existing and trusted tools and websites, rather than exploiting a zero-day flaw or introducing malware. "They stay under the radar, blending in seamlessly with legitimate user activity, and mimic everyday operations so their presence goes unnoticed," says Fergusson.</p>
+
+    <p>Cloudflare's 2026 threat report describes a shift away from brute force entry towards high-trust exploitation, with adversaries actively targeting legitimate SaaS, IaaS, and PaaS tools such as Google Calendar, Dropbox, and GitHub to camouflage malicious actions within normal enterprise activity.</p>
+
+    <p>This isn't surprising, says Razvan Ionescu, head of offensive security services at Pentest-Tools.com. He describes how his team "consistently finds that organizations have invested heavily in signature-based detection and perimeter controls" — yet monitoring of legitimate administrative tooling, endpoint management platforms, cloud management consoles, and scripting environments "remains thin."</p>
+
+    <h2>State-sponsored and highly targeted</h2>
+
+    <p>Living off the land attacks suit a certain type of adversary. The technique is especially attractive to "state-sponsored and highly-targeted threat actors", according to Dana Simberkoff, chief risk privacy and information security officer at AvePoint.</p>
+
+    <p>Rather than seeking immediate financial gain, attackers are aiming for espionage, strategic positioning, and in some cases, preparation for future disruption. "Living off the land tactics allow these adversaries to maintain access over long periods without drawing attention," Simberkoff explains.</p>
+
+    <p>These attacks allow nation states to collect strategic intelligence across diplomatic, military, economic, or technological targets, says Tracey Hannan-Jones, consulting director for information security at UBDS Digital. "By using pre-positioning, attackers gain access to critical systems, so disruption can be triggered during geopolitical tensions." Supply chain attacks, where adversaries compromise vendors to reach downstream targets, are "easy leverage," she warns.</p>
+
+    <p>Cloudflare's report tracked four primary nation state adversaries over the past year: Russia, China, North Korea, and Iran — each approaching LotL attacks differently based on operational goals. China, for example, appears to have shifted from bulk data theft towards targeting legitimate cloud infrastructure for longer-term pre-positioning, with some groups using Google Calendar for command-and-control communication.</p>
+
+    <p>"The goal is to create a resilient architecture that remains nearly invisible to standard perimeter defences," says Ionescu. "Rather than trying to exfiltrate data today, these attackers are establishing persistent footholds now to use during a future geopolitical event."</p>
+
+    <h2>Businesses most at risk</h2>
+
+    <p>Organizations with complex digital environments are particularly exposed. "Cloud-first enterprises, regulated industries, critical infrastructure providers and companies embedded in large supply chains are at risk," says Simberkoff. "The more identities, integrations and third party connections an organization has, the more opportunity attackers have to hide."</p>
+
+    <p>Government and defence are prime targets. "State actors look at pursuing intelligence and influence, accessing and stealing sensitive data, policy insight and information of geopolitical value, so they can use it against them," says Hannan-Jones.</p>
+
+    <h2>AI is making attacks more refined</h2>
+
+    <p>Rapidly developing technology such as AI is adding to the risk. "Instead of fully autonomous attacks, we're seeing AI used to support reconnaissance, targeting and decision making," says Simberkoff. "This helps attackers understand environments faster and choose techniques that look the most legitimate." The result is activity that increasingly resembles normal administrative behaviour, making detection much more difficult.</p>
+
+    <p>Attackers can use AI to rapidly analyse public information — organisation charts, job postings, technical blogs, vendor documentation, and leaked credentials — and infer likely tech stacks and access paths. "This improves the precision of initial access attempts and reduces the need for noisy trial-and-error," says Hannan-Jones.</p>
+
+    <h2>How to protect your business</h2>
+
+    <p>Rather than trying to prevent compromise entirely, Simberkoff recommends focusing on "detecting misuse and limiting impact" — advocating strong identity governance, least privilege access, and detailed logging of administrative activity.</p>
+
+    <p>Ionescu underscores the importance of understanding your own blast radius. "Before asking what you'd detect, ask what an attacker with compromised admin credentials to your endpoint management platform, your identity provider or your cloud management console could do. Most organizations haven't mapped that explicitly."</p>
+
+    <p>The second priority is closing the gap between what your monitoring covers and where attackers actually operate. "Effective reconnaissance from an attacker's perspective focuses on maintaining OPSEC and blending into normal traffic patterns. Your detection logic needs to match that: anomaly detection on administrative actions, not just signature matching on known bad payloads," says Ionescu.</p>
+
+    <p>Robust incident response is also key. Protecting your firm from living off the land attacks requires building operational playbooks for "quiet compromise", says Hannan-Jones. "Many organizations will have playbooks for ransomware, but very few are prepared for stealthy pre-positioning. Define what 'suspicious admin activity' looks like in your environment and create response runbooks for identity compromise, token theft and privileged account misuse."</p>
+
+    <div class="source-note">
+      <p>Originally published in <a href="https://www.itpro.com/security/cyber-attacks/how-to-protect-your-business-from-living-off-the-land-attacks" target="_blank" rel="noopener">IT Pro</a> · 19 May 2026 · By Kate O'Flaherty.</p>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('theme-toggle');
+  var icon = document.getElementById('theme-icon');
+  function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function applyTheme(theme){root.setAttribute('data-theme',theme);icon.textContent=theme==='dark'?'☀︎':'☽';localStorage.setItem('theme',theme);}
+  var saved=localStorage.getItem('theme');
+  applyTheme(saved||getSystemTheme());
+  btn.addEventListener('click',function(){var current=root.getAttribute('data-theme');applyTheme(current==='dark'?'light':'dark');});
+})();
+</script>
+</body>
+</html>
