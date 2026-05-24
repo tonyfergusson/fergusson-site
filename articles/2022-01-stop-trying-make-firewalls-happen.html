@@ -4,48 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stop Trying to Make Firewalls Happen: What IT Can Learn from Tesla — Tony Fergusson</title>
+<meta name="description" content="When is it necessary to abandon the status quo and create a new one? In cybersecurity, right now. Tony Fergusson on Zero Trust and the Tesla parallel.">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--tag-bg:rgba(0,0,0,0.05)}
-@media(prefers-color-scheme:dark){:root{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
 nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
 .nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
-.nav-links{display:flex;gap:2rem}
+.nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
-.entry-hero-placeholder{width:100%;height:240px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:64px}
-.entry-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
 .back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
-h1{font-size:clamp(24px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
 .author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
 .author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
 .author-info{display:flex;flex-direction:column;gap:2px}
-.author-name{font-size:14px;font-weight:500}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
 .author-date{font-size:13px;color:var(--text-tertiary)}
-.entry-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
-.entry-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
-.entry-tag.format{font-weight:600;color:var(--text-primary)}
-.entry-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
-.entry-body p{margin-bottom:1.5rem}
-.source-card{margin-top:3rem;padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--bg-secondary)}
-.source-card-label{font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:0.5rem}
-.source-card-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:15px;font-weight:500;color:var(--text-primary);text-decoration:none}
-.source-card-link svg{flex-shrink:0;opacity:0.5}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul,.article-body ol{margin:0 0 1.5rem 1.5rem}
+.article-body li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
 footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
-@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.entry-container{padding:2rem 1rem 4rem}}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
 </style>
 </head>
 <body>
-<nav><a class="nav-name" href="/">Tony Fergusson</a><div class="nav-links"><a href="/#about">About</a><a href="/#topics">Topics</a><a href="/articles/">Writing</a><a href="/#contact">Contact</a></div></nav>
-<div class="entry-hero-placeholder">📝</div>
-<div class="entry-container">
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☀︎</span></button>
+  </div>
+</nav>
+<div class="article-container">
   <a class="back-link" href="/articles/">← All writing</a>
-  <h1>Stop Trying to Make Firewalls Happen: What IT Can Learn from Tesla</h1>
-  <div class="author-row"><img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson"><div class="author-info"><span class="author-name">Tony Fergusson</span><span class="author-date">25 Jan 2022</span></div></div>
-  <div class="entry-tags"><span class="entry-tag format">Article</span><span class="entry-tag">CXO REvolutionaries</span></div>
-  <div class="entry-body"><!-- CONTENT START --><!-- CONTENT END --></div>
-  <div class="source-card"><p class="source-card-label">Original source</p><a class="source-card-link" href="https://revolutionaries.zscaler.com/insights/stop-trying-make-firewalls-happen-what-it-can-learn-tesla-about-disrupting-status-quo" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on revolutionaries.zscaler.com</a></div>
+  <div class="article-meta">
+    <h1>Stop Trying to Make Firewalls Happen: What IT Can Learn from Tesla</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">25 January 2022 &middot; CXO REvolutionaries, Zscaler</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Article</span>
+      <span class="article-tag">CXO REvolutionaries</span>
+      <span class="article-tag">Zero Trust</span>
+    </div>
+  </div>
+  <div class="article-body">
+    <p>When is it necessary to abandon the status quo and create a new one? In cybersecurity, the answer is: right now.</p>
+    <p>Serial innovator Elon Musk was willing to reject the status quo and build something entirely new. Traditional manufacturers of gas-powered cars have sought to optimise the combustion engine — something they've been doing for more than a century. With Tesla, Musk took a fundamentally different approach. Tesla wouldn't continue to tweak the combustion engine for small performance gains. It wouldn't even have a combustion engine. Something better — an electric motor — would replace it entirely.</p>
+    <p>Consider this: combustion engines have around 2,000 moving parts. Electric motors have twenty. That's two orders of magnitude fewer parts to install, configure, and maintain — far fewer parts to wear down or require replacement. The electric motor paradigm is elegant in its simplicity.</p>
+    <h2>The same contrast applies to network security</h2>
+    <p>There is a striking parallel between the complexity of legacy security infrastructure and the elegant simplicity of the Zero Trust security model. Castle-and-moat security architectures were designed to protect work performed within the castle walls of a conventional network perimeter. Legacy solutions like firewalls and intrusion prevention systems aimed to keep out the bad guys.</p>
+    <p>Only now, work is performed outside that network boundary — in the cloud, on the internet, from anywhere. "Simplicity" and "efficiency" no longer apply to traditional security infrastructure technologies, which have become increasingly complex, unwieldy, costly, and difficult to manage. The perimeter that firewalls were designed to protect no longer exists in any meaningful sense.</p>
+    <p>Yet most organisations continue to invest in patching and extending their legacy security infrastructure, adding more tools, more vendors, more complexity — seeking small gains from a fundamentally broken paradigm. This is the combustion engine approach to security.</p>
+    <h2>Zero Trust is the electric motor</h2>
+    <p>The Zero Trust security model rejects the castle-and-moat status quo. It operates on a simple, powerful principle: never trust, always verify. No user, no device, no connection is implicitly trusted, regardless of whether it originates inside or outside the corporate network. Every request for access is verified. Every connection is authorised contextually. Users have access only to the specific resources they need — nothing more.</p>
+    <p>This is an elegantly simple path forward. It eliminates the attack surface that legacy perimeter security tried and failed to defend. It removes the implicit trust that attackers exploit when they gain a foothold inside the network. It makes lateral movement impossible by default.</p>
+    <p>Change is hard, especially radical change. Most organisations choose the easier, safer route: prioritising small enhancements to existing architectures, adding features to augment old products. But just as the combustion engine has a fundamental ceiling on what can be achieved through incremental optimisation, so does legacy perimeter security.</p>
+    <p>The firewall was designed for a world that no longer exists. It's time to stop trying to make firewalls happen, and start building the security infrastructure that the modern enterprise actually needs.</p>
+    <div class="source-note">
+      <p>Originally published on <a href="https://www.zscaler.com/blogs/cxo-insights/stop-trying-make-firewalls-happen-what-it-can-learn-tesla-about-disrupting-status-quo" target="_blank" rel="noopener">CXO REvolutionaries, Zscaler</a> · 25 January 2022.</p>
+    </div>
+  </div>
 </div>
 <footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();</script>
 </body>
 </html>
