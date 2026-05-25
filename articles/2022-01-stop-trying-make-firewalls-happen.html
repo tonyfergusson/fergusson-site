@@ -19,6 +19,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .nav-links a:hover{color:var(--text-primary)}
 .theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
 .theme-toggle:hover{color:var(--text-primary)}
+.article-hero{width:100%;max-height:380px;object-fit:cover;display:block}
 .article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
 .back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
 .back-link:hover{color:var(--text-primary)}
@@ -54,9 +55,10 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
     <a href="/#topics">Topics</a>
     <a href="/articles/">Writing</a>
     <a href="/#contact">Contact</a>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☀︎</span></button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☮︎</span></button>
   </div>
 </nav>
+<img class="article-hero" src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1400&q=80" alt="Stop Trying to Make Firewalls Happen: What IT Can Learn from Tesla">
 <div class="article-container">
   <a class="back-link" href="/articles/">← All writing</a>
   <div class="article-meta">
@@ -93,6 +95,6 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
   </div>
 </div>
 <footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
-<script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();</script>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☮︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();</script>
 </body>
 </html>

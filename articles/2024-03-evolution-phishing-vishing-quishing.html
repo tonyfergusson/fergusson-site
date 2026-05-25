@@ -55,10 +55,10 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
     <a href="/#topics">Topics</a>
     <a href="/articles/">Writing</a>
     <a href="/#contact">Contact</a>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☀︎</span></button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☮︎</span></button>
   </div>
 </nav>
-
+<img class="article-hero" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1400&q=80" alt="The Evolution of Phishing, Vishing and Quishing">
 <div class="article-container">
   <a class="back-link" href="/articles/">← All writing</a>
   <div class="article-meta">
@@ -97,7 +97,7 @@ footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);
 </div>
 <footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
 <script>
-(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☮︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();
 </script>
 </body>
 </html>
