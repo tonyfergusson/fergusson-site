@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le piratage de prompts : une boîte de Pandore pour les entreprises — Tony Fergusson</title>
+<meta name="description" content="Le détournement de prompts représente une menace émergente pour les entreprises utilisant l'IA générative. Tony Fergusson analyse les risques et les défenses possibles.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
+.author-info{display:flex;flex-direction:column;gap:2px}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
+.author-date{font-size:13px;color:var(--text-tertiary)}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul,.article-body ol{margin:0 0 1.5rem 1.5rem}
+.article-body li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.lang-note{display:inline-block;font-size:12px;padding:0.25rem 0.65rem;border-radius:999px;background:var(--tag-bg);color:var(--text-tertiary);border:0.5px solid var(--border);margin-bottom:1.5rem}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><span id="theme-icon">☀︎</span></button>
+  </div>
+</nav>
+
+<div class="article-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+  <div class="article-meta">
+    <span class="lang-note">🇫🇷 Article en français</span>
+    <h1>Le piratage de prompts : une boîte de Pandore pour les entreprises</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">3 Nov 2025 · Forbes France</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Article</span>
+      <span class="article-tag">Forbes France</span>
+      <span class="article-tag">France</span>
+      <span class="article-tag">AI Security</span>
+      <span class="article-tag">Prompt Injection</span>
+    </div>
+  </div>
+  <div class="article-body">
+    <p>L'intelligence artificielle générative a ouvert de nouvelles possibilités pour les entreprises — mais aussi de nouveaux vecteurs d'attaque que beaucoup n'ont pas encore pleinement mesurés. Parmi ceux-ci, le piratage de prompts (ou <em>prompt hijacking</em>) représente une menace émergente, subtile et potentiellement dévastatrice.</p>
+
+    <h2>Qu'est-ce que le piratage de prompts ?</h2>
+    <p>Le piratage de prompts est une technique par laquelle un acteur malveillant manipule les instructions données à un système d'IA — que ce soit directement ou via des contenus externes que le système est amené à traiter. L'objectif : détourner le comportement du modèle pour qu'il agisse contre les intérêts de l'organisation qui l'utilise.</p>
+    <p>On distingue principalement deux variantes. L'<strong>injection directe</strong> consiste à insérer des instructions malveillantes directement dans le prompt de l'utilisateur, en tentant de contourner les garde-fous du modèle. L'<strong>injection indirecte</strong>, plus insidieuse, vise à intégrer des instructions malveillantes dans des données que le modèle va traiter : un document PDF, une page web, un e-mail — n'importe quelle source externe à laquelle le système d'IA a accès.</p>
+
+    <h2>Pourquoi les entreprises sont-elles particulièrement exposées ?</h2>
+    <p>Les déploiements d'IA en entreprise sont rarement isolés. Les assistants IA modernes sont connectés à des bases de données internes, des systèmes de messagerie, des outils de gestion de projets, des API métier. Cette connectivité est précisément ce qui les rend utiles — et ce qui les rend vulnérables.</p>
+    <p>Imaginons un assistant IA intégré à une boîte mail d'entreprise. Un attaquant peut envoyer un e-mail contenant des instructions dissimulées, demandant à l'assistant de transmettre des données confidentielles, de modifier des paramètres ou d'agir sur des systèmes connectés. L'utilisateur ne voit rien ; l'IA exécute en silence.</p>
+    <p>Ce scénario n'est pas théorique. Des chercheurs en sécurité ont démontré des attaques de ce type dans des environnements réels, exploitant des agents IA largement déployés.</p>
+
+    <h2>La confiance aveugle, talon d'Achille de l'IA</h2>
+    <p>Le problème fondamental est celui de la confiance. Les modèles de langage sont entraînés à être utiles, à suivre des instructions, à traiter les informations qu'on leur soumet. Cette disposition — essentielle à leur utilité — devient une faiblesse quand les données qu'ils traitent peuvent elles-mêmes contenir des instructions.</p>
+    <p>En termes de sécurité, cela rappelle les injections SQL des années 2000 : une confusion entre données et instructions qui a mis des décennies à être correctement adressée dans le développement logiciel. Nous nous trouvons à l'aube d'une courbe d'apprentissage similaire, mais dans un contexte où les systèmes IA sont déployés à une vitesse bien supérieure à la maturité des contrôles de sécurité.</p>
+
+    <h2>Que doivent faire les organisations ?</h2>
+    <p>La réponse ne peut pas être de renoncer à l'IA. Les bénéfices sont trop importants et la compétition trop intense. Il s'agit plutôt d'adopter une approche de sécurité adaptée à ce nouveau paradigme.</p>
+    <p>Plusieurs principes s'imposent. D'abord, le <strong>principe du moindre privilège</strong> appliqué aux agents IA : un assistant qui n'a accès qu'à ce dont il a besoin ne peut pas être détourné pour faire davantage. Ensuite, la <strong>validation des sorties</strong> : les actions que l'IA est autorisée à entreprendre doivent être surveillées et filtrées, en particulier celles qui impliquent des données sensibles ou des actions irréversibles. Enfin, la <strong>méfiance structurelle envers les données externes</strong> : toute information provenant de l'extérieur du périmètre contrôlé doit être traitée comme potentiellement hostile.</p>
+    <p>Ce dernier point rejoint les principes du Zero Trust : ne jamais faire confiance, toujours vérifier. Ce cadre, conçu pour les réseaux, trouve une nouvelle pertinence dans l'ère des agents IA.</p>
+    <p>La boîte de Pandore est ouverte. La question n'est plus de savoir si les entreprises seront confrontées à ces attaques, mais de savoir si elles s'y seront préparées à temps.</p>
+
+    <div class="source-note">
+      <p>Publié initialement sur <a href="https://www.forbes.fr/management/le-piratage-de-prompts-une-boite-de-pandore-pour-les-entreprises/" target="_blank" rel="noopener">Forbes France</a> · 3 novembre 2025. Voir aussi la version anglaise : <a href="/articles/2025-10-prompt-manipulation-sdxcentral.html">Prompt Manipulation: Pandora's Box Has Been Opened</a> (SDxCentral).</p>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+<script>
+(function(){var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}applyTheme(localStorage.getItem('theme')||getSystemTheme());btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+</script>
+</body>
+</html>
