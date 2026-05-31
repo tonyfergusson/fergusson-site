@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Popcorn Moment, When Thinking Became Too Slow — Tony Fergusson</title>
+<meta name="description" content="Zero Trust, Negative Trust, and the case for Reflex Defence. Why machine-speed attacks mean defence can no longer wait for human thought.">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--text-primary:#1a1a1a;--text-secondary:#555;--text-tertiary:#999;--bg-primary:#fff;--bg-secondary:#f7f7f5;--border:rgba(0,0,0,0.1);--radius:12px;--tag-bg:rgba(0,0,0,0.05)}
+[data-theme="dark"]{--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--text-primary:#f0f0ee;--text-secondary:#aaa;--text-tertiary:#666;--bg-primary:#141414;--bg-secondary:#1e1e1c;--border:rgba(255,255,255,0.1);--tag-bg:rgba(255,255,255,0.08)}}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text-primary);background:var(--bg-primary);line-height:1.6;transition:background 0.2s,color 0.2s}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 2rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg-primary);z-index:100}
+.nav-name{font-size:15px;font-weight:500;text-decoration:none;color:var(--text-primary)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none}
+.nav-links a:hover{color:var(--text-primary)}
+.theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
+.theme-toggle:hover{color:var(--text-primary)}
+.article-hero{width:100%;max-height:380px;object-fit:cover;display:block}
+.article-container{max-width:720px;margin:0 auto;padding:3rem 2rem 6rem}
+.back-link{font-size:14px;color:var(--text-secondary);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:2.5rem}
+.back-link:hover{color:var(--text-primary)}
+.article-meta{margin-bottom:2.5rem}
+h1{font-size:clamp(26px,4vw,38px);font-weight:500;line-height:1.25;margin-bottom:1.25rem}
+.author-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem}
+.author-thumb{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;border:1.5px solid var(--border)}
+.author-info{display:flex;flex-direction:column;gap:2px}
+.author-name{font-size:14px;font-weight:500;color:var(--text-primary)}
+.author-date{font-size:13px;color:var(--text-tertiary)}
+.article-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid var(--border)}
+.article-tag{font-size:12px;padding:0.3rem 0.75rem;border-radius:999px;background:var(--tag-bg);color:var(--text-secondary);border:0.5px solid var(--border)}
+.article-tag.format{font-weight:500;color:var(--text-primary)}
+.article-body{font-size:17px;line-height:1.85;color:var(--text-secondary)}
+.article-body p{margin-bottom:1.5rem}
+.article-body h2,.article-body h3{font-size:20px;font-weight:500;color:var(--text-primary);margin:2.5rem 0 1rem}
+.article-body h3{font-size:18px}
+.article-body a{color:var(--text-primary);text-decoration:underline;text-underline-offset:3px}
+.article-body ul{margin:0 0 1.5rem 1.5rem}
+.article-body ul li{margin-bottom:0.5rem}
+.article-body strong{color:var(--text-primary);font-weight:500}
+.article-body blockquote{border-left:2px solid var(--border);padding-left:1.5rem;margin:2rem 0;font-style:italic;color:var(--text-secondary)}
+.source-note{margin-top:4rem;padding-top:2rem;border-top:0.5px solid var(--border);font-size:14px;color:var(--text-tertiary)}
+.source-note a{color:var(--text-secondary);text-decoration:underline;text-underline-offset:3px}
+footer{padding:2rem;text-align:center;font-size:13px;color:var(--text-tertiary);border-top:0.5px solid var(--border)}
+@media(max-width:600px){nav{padding:1rem}.nav-links{gap:1rem}.article-container{padding:2rem 1rem 4rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-name" href="/">Tony Fergusson</a>
+  <div class="nav-links">
+    <a href="/#about">About</a>
+    <a href="/#topics">Topics</a>
+    <a href="/articles/">Writing</a>
+    <a href="/#contact">Contact</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span id="theme-icon">☀︎</span>
+    </button>
+  </div>
+</nav>
+
+<img class="article-hero" src="/articles/popcorn-moment-hero.svg" alt="A raw popcorn kernel, a popped piece of popcorn, and a burnt kernel">
+
+<div class="article-container">
+  <a class="back-link" href="/articles/">← All writing</a>
+
+  <div class="article-meta">
+    <h1>The Popcorn Moment, When Thinking Became Too Slow</h1>
+    <div class="author-row">
+      <img class="author-thumb" src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
+      <div class="author-info">
+        <span class="author-name">Tony Fergusson</span>
+        <span class="author-date">31 May 2026</span>
+      </div>
+    </div>
+    <div class="article-tags">
+      <span class="article-tag format">Article</span>
+      <span class="article-tag">Zero Trust</span>
+      <span class="article-tag">Negative Trust</span>
+      <span class="article-tag">Reflex Defence</span>
+      <span class="article-tag">AI Threats</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>Change in security never arrives all at once. It moves in a sequence you can predict, and lately at a speed you cannot match. You can hear both in a pan of popcorn.</p>
+
+    <p>One kernel pops. A pause. Two more. Then the tempo climbs until you can no longer pick out a single pop and it becomes a roar, before tapering off almost as fast as it began. Anyone who has made popcorn knows that curve without being taught it. You do not need a chart for it. You have already heard acceleration.</p>
+
+    <h2>The first kernels</h2>
+
+    <p>Ten years ago, I was one of the first to pop. I deployed ZTNA before most had even heard the term Zero Trust, back when people would look at me sideways for it. The pan was barely warm, and you could count the early poppers on one hand.</p>
+
+    <p>Change always moves in the same ratio. Roughly twenty percent pop early. They feel the heat before the crowd and they transform. Sixty percent are the majority. They understand the need, but they wait to see the early kernels go before they commit. The last twenty percent have already decided. They are not going to move.</p>
+
+    <p>For most of my career I have been helping and watching this transition, on the assumption that the rest would catch up eventually. The pan was warm, not dangerous. That is no longer true.</p>
+
+    <h2>The pan turns red hot</h2>
+
+    <p>While the majority were still debating whether Zero Trust was real, some of us had already moved on to the next phase, Negative Trust. Deception. Do not just verify and refuse, actively mislead. Lace the environment with honeypots and lures so that anyone who touches them has, by definition, declared themselves an attacker. Turn your own estate into a place attackers are afraid to move.</p>
+
+    <p>Then frontier AI arrived, the Mythos class of capability now handled so carefully it is not even released to the open market, and the heat went to ten.</p>
+
+    <p>Here is what that heat actually means, and this is the point where the numbers stop being abstract. CrowdStrike's 2026 Global Threat Report puts the average breakout time, the gap between initial compromise and the first lateral movement, at 29 minutes. It was 48 minutes the year before, and 98 minutes back in 2021. The fastest breakout they observed was 27 seconds. In one intrusion, data was leaving the building within four minutes of the attacker getting in. AI-enabled adversary activity rose 89 percent in a single year.</p>
+
+    <p>And here is the part that should worry us most. Breakout time is lateral movement time. Most organisations replaced the VPN with ZTNA and decided the job was done, but a VPN replacement only protects the remote user reaching an application. It does nothing for the people and systems already inside. On-premises users, the branch, the campus, the data centre, all of it stays on a flat and trusted network, and a flat trusted network is exactly where lateral movement happens. The attacker who moves in 27 seconds is not breaking down the front door. They are walking through the ones we never closed.</p>
+
+    <p>Read those numbers as a popping curve and the message is hard to miss. The attacker is no longer human. An AI-driven adversary probes, pivots, chains, and exfiltrates faster than an analyst can read the title of the alert. At that speed, the human in the loop is no longer the safeguard we always believed it to be. The human in the loop is the slow component. The vulnerability is the pause for thought.</p>
+
+    <h2>Why reflex</h2>
+
+    <p>What do you actually do when you touch a hot stove? You do not decide anything. Your hand pulls back before your brain has even registered the pain. The signal never reaches the brain in time. It short-circuits through the spine and fires the muscle directly, and the conscious decision arrives later, once you are already safe. That is a reflex, and it exists precisely because some things are too hot to think about.</p>
+
+    <p>This is the architecture the moment demands. Call it <strong>Reflex Defence</strong>.</p>
+
+    <p>Negative Trust is the nerve ending. It senses the threat the instant a decoy fires or an agent behaves in a way it should not. Zero Trust is the muscle. It withdraws access, kills the session, and severs the path. Reflex Defence is the arc that wires the two together directly, so detection triggers response without first routing through the brain, which is your SOC. We detect at machine speed, and we close access at machine speed. No ticket, no analyst, no pause.</p>
+
+    <p>The human still matters, enormously, but consciousness belongs after the reflex, doing the investigation and the tuning. It does not belong in the critical path of a fight that is already over by the time anyone looks up.</p>
+
+    <p>When the pan is this hot, you do not think. You react. That is not a weakness in the design. That is the design.</p>
+
+    <h2>Pop, or burn</h2>
+
+    <p>So here is what surprises me, ten years on. The pan that made us pop is now too hot to touch, and I look around and see how many kernels are still sitting there. Not popping. Waiting.</p>
+
+    <p>In a pan this hot, the ones who do not pop are not waiting. They are burning. They simply do not know it yet. Ten years ago, not popping meant falling behind. Today it means you are the burnt kernel at the bottom of the pot.</p>
+
+    <p>The pan is at maximum heat. The only question left is whether you pop.</p>
+  </div>
+</div>
+
+<footer>© 2026 Tony Fergusson · Copenhagen, Denmark</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme-toggle'),icon=document.getElementById('theme-icon');
+  function getSystemTheme(){return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  function applyTheme(t){root.setAttribute('data-theme',t);icon.textContent=t==='dark'?'☀︎':'☽';localStorage.setItem('theme',t);}
+  applyTheme(localStorage.getItem('theme')||getSystemTheme());
+  btn.addEventListener('click',function(){applyTheme(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+})();
+</script>
+</body>
+</html>
