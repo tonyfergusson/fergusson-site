@@ -1,6 +1,7 @@
 {
   "_readme": "Article database for tonyfergusson.com. Fields: slug, title, date (YYYY-MM-DD), format (Article|Breakout|Interview|Keynote|Panel|Podcast|Roundtable|Webinar|Workshop), event, city, country, source_url, image",
   "articles": [
+    {"slug":"2026-05-popcorn-moment","title":"The Popcorn Moment, When Thinking Became Too Slow","date":"2026-05-31","format":"Article","event":"","city":"","country":"","source_url":"","image":"/articles/popcorn-moment-hero.svg"},
     {"slug":"2026-05-lotl-attacks-itpro","title":"How to Protect Your Business from Living Off the Land Attacks","date":"2026-05-19","format":"Article","event":"IT Pro","city":"","country":"UK","source_url":"https://www.itpro.com/security/cyber-attacks/how-to-protect-your-business-from-living-off-the-land-attacks","image":"https://cdn.mos.cms.futurecdn.net/aXognGP4UVUiWoAxxh57qJ-1920-80.jpg"},
     {"slug":"2026-01-cybersecurity-outlook-2026","title":"The Cybersecurity Outlook for 2026: Navigating AI, Change, System Complexity and a Crisis of Trust","date":"2026-01-20","format":"Article","event":"AIJourn","city":"","country":"","source_url":"https://aijourn.com/the-cybersecurity-outlook-for-2026-navigating-ai-change-system-complexity-anda-crisis-of-trust/","image":""},
     {"slug":"2026-01-zscaler-ripple-effect-report","title":"Zscaler Ripple Effect Research Report","date":"2026-01-08","format":"Article","event":"Zscaler","city":"","country":"","source_url":"","image":""},
