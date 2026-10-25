@@ -22,8 +22,8 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .theme-toggle{background:none;border:0.5px solid var(--border);border-radius:20px;padding:4px 10px;cursor:pointer;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:5px;transition:color 0.15s,border-color 0.15s}
 .theme-toggle:hover{color:var(--text-primary)}
 
-/* QUOTE TICKER */
-.quote-ticker{display:flex;overflow:hidden;border-bottom:0.5px solid var(--border);padding:1.25rem 0;position:sticky;top:57px;background:var(--bg-primary);z-index:99}
+/* QUOTE TICKER (above footer) */
+.quote-ticker{display:flex;overflow:hidden;border-top:0.5px solid var(--border);padding:1.25rem 0;position:relative;background:var(--bg-primary)}
 .quote-ticker::before,.quote-ticker::after{content:'';position:absolute;top:0;width:80px;height:100%;z-index:2;pointer-events:none}
 .quote-ticker::before{left:0;background:linear-gradient(to right,var(--bg-primary),transparent)}
 .quote-ticker::after{right:0;background:linear-gradient(to left,var(--bg-primary),transparent)}
@@ -149,22 +149,6 @@ footer a:hover{color:var(--text-primary)}
   </div>
 </nav>
 
-<div class="quote-ticker" aria-label="Quotes from Tony Fergusson's published writing">
-  <div class="ticker-track" id="ticker-track">
-    <a class="ticker-item" href="/articles/2026-05-lotl-attacks-itpro.html"><span class="ticker-quote">"Adversaries are being forced to be more stealthy — leveraging legitimate tools and processes to blend in seamlessly with legitimate user activity."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">IT Pro, 2026</span></a>
-    <a class="ticker-item" href="/articles/2026-05-popcorn-moment.html"><span class="ticker-quote">"When the pan is this hot, you do not think. You react."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">The Popcorn Moment, 2026</span></a>
-    <a class="ticker-item" href="/articles/"><span class="ticker-quote">"Those who build trust will thrive in the AI era."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Tony Fergusson</span></a>
-    <a class="ticker-item" href="/articles/2022-01-stop-trying-make-firewalls-happen.html"><span class="ticker-quote">"The firewall was designed for a world that no longer exists. That world is gone."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Stop Trying to Make Firewalls Happen, 2022</span></a>
-    <a class="ticker-item" href="/articles/2023-01-why-your-soc-wont-save-you.html"><span class="ticker-quote">"A SOC that monitors a perimeter that no longer exists is not security — it is theatre."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Why Your SOC Won't Save You, 2023</span></a>
-    <a class="ticker-item" href="/articles/2024-12-simplicity-complexity-resolved.html"><span class="ticker-quote">"Technical debt is not a balance sheet item — it is a threat vector."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">The True Cost of Legacy Technology, 2021</span></a>
-    <a class="ticker-item" href="/articles/2025-10-prompt-manipulation-sdxcentral.html"><span class="ticker-quote">"Prompt manipulation is not a theoretical risk. The box is open."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">SDxCentral, 2025</span></a>
-    <a class="ticker-item" href="/articles/exploiting-trust.html"><span class="ticker-quote">"Trust is the most exploited vulnerability in enterprise security."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Exploiting Trust, Cloud Security Alliance, 2024</span></a>
-    <a class="ticker-item" href="/articles/2022-05-wannacry-five-years.html"><span class="ticker-quote">"WannaCry proved that perimeter security was already dead. Most organisations just hadn't received the memo."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">WannaCry Five Years, CXO REvolutionaries, 2022</span></a>
-    <a class="ticker-item" href="/articles/2024-12-simplicity-complexity-resolved.html"><span class="ticker-quote">"Simplicity is not the absence of sophistication — it is complexity fully resolved."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Simplicity: Complexity Resolved, 2024</span></a>
-    <a class="ticker-item" href="/articles/2026-01-cybersecurity-outlook-2026.html"><span class="ticker-quote">"If you do not control your data, you do not control your destiny."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Who Owns Information in the Era of AI?, 2024</span></a>
-  </div>
-</div>
-
 <!-- SPEAKING BANNER -->
 <section class="stage" id="stage" aria-label="Tony Fergusson speaking at conferences">
   <div class="stage-shade"></div>
@@ -284,6 +268,22 @@ footer a:hover{color:var(--text-primary)}
   </div>
   <a class="view-all" href="/articles/">View all writing &amp; talks →</a>
 </section>
+
+<div class="quote-ticker" aria-label="Quotes from Tony Fergusson's published writing">
+  <div class="ticker-track" id="ticker-track">
+    <a class="ticker-item" href="/articles/2026-05-lotl-attacks-itpro.html"><span class="ticker-quote">"Adversaries are being forced to be more stealthy — leveraging legitimate tools and processes to blend in seamlessly with legitimate user activity."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">IT Pro, 2026</span></a>
+    <a class="ticker-item" href="/articles/2026-05-popcorn-moment.html"><span class="ticker-quote">"When the pan is this hot, you do not think. You react."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">The Popcorn Moment, 2026</span></a>
+    <a class="ticker-item" href="/articles/"><span class="ticker-quote">"Those who build trust will thrive in the AI era."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Tony Fergusson</span></a>
+    <a class="ticker-item" href="/articles/2022-01-stop-trying-make-firewalls-happen.html"><span class="ticker-quote">"The firewall was designed for a world that no longer exists. That world is gone."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Stop Trying to Make Firewalls Happen, 2022</span></a>
+    <a class="ticker-item" href="/articles/2023-01-why-your-soc-wont-save-you.html"><span class="ticker-quote">"A SOC that monitors a perimeter that no longer exists is not security — it is theatre."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Why Your SOC Won't Save You, 2023</span></a>
+    <a class="ticker-item" href="/articles/2024-12-simplicity-complexity-resolved.html"><span class="ticker-quote">"Technical debt is not a balance sheet item — it is a threat vector."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">The True Cost of Legacy Technology, 2021</span></a>
+    <a class="ticker-item" href="/articles/2025-10-prompt-manipulation-sdxcentral.html"><span class="ticker-quote">"Prompt manipulation is not a theoretical risk. The box is open."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">SDxCentral, 2025</span></a>
+    <a class="ticker-item" href="/articles/exploiting-trust.html"><span class="ticker-quote">"Trust is the most exploited vulnerability in enterprise security."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Exploiting Trust, Cloud Security Alliance, 2024</span></a>
+    <a class="ticker-item" href="/articles/2022-05-wannacry-five-years.html"><span class="ticker-quote">"WannaCry proved that perimeter security was already dead. Most organisations just hadn't received the memo."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">WannaCry Five Years, CXO REvolutionaries, 2022</span></a>
+    <a class="ticker-item" href="/articles/2024-12-simplicity-complexity-resolved.html"><span class="ticker-quote">"Simplicity is not the absence of sophistication — it is complexity fully resolved."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Simplicity: Complexity Resolved, 2024</span></a>
+    <a class="ticker-item" href="/articles/2026-01-cybersecurity-outlook-2026.html"><span class="ticker-quote">"If you do not control your data, you do not control your destiny."</span><span class="ticker-dot" aria-hidden="true"></span><span class="ticker-attr">Who Owns Information in the Era of AI?, 2024</span></a>
+  </div>
+</div>
 
 <footer>
   © 2026 Tony Fergusson · Copenhagen, Denmark ·
