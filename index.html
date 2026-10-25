@@ -37,8 +37,26 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--border);flex-shrink:0;display:inline-block}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* HERO — two column */
-.hero{padding:5rem 2rem 5rem;max-width:1000px;margin:0 auto;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:center}
+/* SPEAKING BANNER */
+.stage{position:relative;height:clamp(380px,46vw,620px);overflow:hidden;background:#07080c;isolation:isolate;border-bottom:0.5px solid var(--border)}
+.stage-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+.stage-slide img{width:100%;height:100%;object-fit:cover;object-position:var(--fx) var(--fy);transform-origin:var(--fx) var(--fy);display:block}
+.stage-slide.on{opacity:1;z-index:1}
+.stage-slide.on img{animation:stagePush 9.8s cubic-bezier(.25,.1,.25,1) forwards}
+@keyframes stagePush{from{transform:scale(1)}to{transform:scale(var(--z,1.15))}}
+.stage-shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(5,6,10,.82) 0%,rgba(5,6,10,.45) 38%,rgba(5,6,10,0) 65%),linear-gradient(0deg,rgba(5,6,10,.7) 0%,rgba(5,6,10,0) 40%)}
+.stage-copy{position:absolute;z-index:3;bottom:clamp(1.5rem,4vw,3rem);left:max(2rem,calc((100% - 1000px)/2 + 2rem));right:2rem;max-width:34rem;color:#f4f5f8;display:grid;gap:.6rem}
+.stage-copy .stage-name{font-size:clamp(30px,5vw,56px);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+.stage-quote{display:grid;gap:.5rem;min-height:4.6em;transition:opacity .7s ease,transform .7s ease}
+.stage-quote.out{opacity:0;transform:translateY(6px)}
+.stage-quote q{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(16px,1.9vw,22px);line-height:1.4;quotes:"\201C" "\201D"}
+.stage-quote span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.7;min-height:1.4em}
+.stage-pause{position:absolute;z-index:3;right:max(1rem,calc((100% - 1000px)/2 + 1rem));bottom:1rem;background:rgba(0,0,0,.35);color:#fff;border:0.5px solid rgba(255,255,255,.35);border-radius:20px;padding:4px 12px;font-size:12px;cursor:pointer}
+.stage-pause:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.stage-slide.on img{animation:none}.stage-slide{transition:opacity .8s}}
+
+/* HERO */
+.hero{padding:4rem 2rem 5rem;max-width:1000px;margin:0 auto;border-bottom:0.5px solid var(--border)}
 .hero-text .label{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1.5rem}
 .hero-text h1{font-size:clamp(28px,4vw,42px);font-weight:500;line-height:1.2;margin-bottom:1.5rem;max-width:560px}
 .hero-text p{font-size:17px;color:var(--text-secondary);line-height:1.8;max-width:520px;margin-bottom:2rem}
@@ -47,8 +65,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .hero-meta strong{color:var(--text-primary);font-weight:500}
 .hero-cta{display:inline-flex;align-items:center;gap:0.5rem;background:var(--text-primary);color:var(--bg-primary);padding:0.75rem 1.5rem;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:opacity 0.15s}
 .hero-cta:hover{opacity:0.8}
-.hero-photo{position:relative}
-.hero-photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;display:block;filter:grayscale(10%)}
 
 /* SERVICES CARDS */
 .services{padding:5rem 2rem;max-width:1000px;margin:0 auto;border-bottom:0.5px solid var(--border)}
@@ -103,8 +119,10 @@ footer a:hover{color:var(--text-primary)}
 @media(max-width:768px){
   nav{padding:1rem}
   .nav-links{gap:1rem}
-  .hero{grid-template-columns:1fr;gap:2.5rem;padding:3rem 1rem}
-  .hero-photo{max-width:240px}
+  .hero{padding:3rem 1rem}
+  .stage{height:auto;aspect-ratio:4/5}
+  .stage-shade{background:linear-gradient(0deg,rgba(5,6,10,.88) 0%,rgba(5,6,10,.25) 55%,rgba(5,6,10,0) 75%)}
+  .stage-copy{left:1rem;right:1rem}
   .services-grid{grid-template-columns:1fr}
   .work-with-me{grid-template-columns:1fr;gap:2rem;padding:3rem 1rem}
   .about-inner{grid-template-columns:1fr;gap:2rem}
@@ -147,6 +165,16 @@ footer a:hover{color:var(--text-primary)}
   </div>
 </div>
 
+<!-- SPEAKING BANNER -->
+<section class="stage" id="stage" aria-label="Tony Fergusson speaking at conferences">
+  <div class="stage-shade"></div>
+  <div class="stage-copy">
+    <div class="stage-name">Tony Fergusson</div>
+    <div class="stage-quote" id="stage-quote" aria-live="off"><q id="stage-q"></q><span id="stage-src"></span></div>
+  </div>
+  <button class="stage-pause" id="stage-pause" type="button">Pause</button>
+</section>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-text">
@@ -159,9 +187,6 @@ footer a:hover{color:var(--text-primary)}
       <span><strong>Based in</strong> Copenhagen, Denmark</span>
     </div>
     <a class="hero-cta" href="#advisory">Work with me →</a>
-  </div>
-  <div class="hero-photo">
-    <img src="https://avatars.githubusercontent.com/u/275301569?v=4" alt="Tony Fergusson">
   </div>
 </div>
 
@@ -288,6 +313,43 @@ footer a:hover{color:var(--text-primary)}
     var current = root.getAttribute('data-theme');
     applyTheme(current === 'dark' ? 'light' : 'dark');
   });
+
+  var SLIDES=[
+    ['01-encore-wide',46,6,1.25,'Trust is a decision, not a default.','','Tony Fergusson on stage at Zenith Live Encore 2025'],
+    ['03-encore-pointing',58,55,1.12,'Those who build trust will thrive in the AI era.','','Tony Fergusson pointing to the audience at Zenith Live Encore 2025'],
+    ['04-amsterdam-solo',44,34,1.08,'The firewall was designed for a world that no longer exists. That world is gone.','Stop Trying to Make Firewalls Happen, 2022','Tony Fergusson speaking at One True Zero Live, Amsterdam 2022'],
+    ['05-zurich-gcc',16,40,1.3,'If you do not control your data, you do not control your destiny.','Who Owns Information in the Era of AI?, 2024','Tony Fergusson on a panel at the Global Cyber Conference, Zurich'],
+    ['02-gartner-london',33,46,1.2,'A SOC that monitors a perimeter that no longer exists is not security. It is theatre.',"Why Your SOC Won't Save You, 2023",'Tony Fergusson speaking at the Gartner Security Summit, London 2022'],
+    ['06-encore-building-trust',46,58,1.12,'Trust is the most exploited vulnerability in enterprise security.','Exploiting Trust, Cloud Security Alliance, 2024','Tony Fergusson presenting Building Trust at Zenith Live Encore 2025'],
+    ['07-amsterdam-zt-arch',19,42,1.08,'Simplicity is not the absence of sophistication. It is complexity fully resolved.','Simplicity: Complexity Resolved, 2024','Tony Fergusson presenting Zero Trust architecture in Amsterdam'],
+    ['08-nordic-trust-crisis',49,36,1.3,'When the pan is this hot, you do not think. You react.','The Popcorn Moment, 2026','Tony Fergusson presenting The Trust Crisis at Nordic Cyber Summit 2025'],
+    ['09-amsterdam-panel',78,52,1.08,'Technical debt is not a balance sheet item. It is a threat vector.','The True Cost of Legacy Technology, 2021','Tony Fergusson on a panel at One True Zero Live, Amsterdam'],
+    ['10-encore-host',60,42,1.25,'Prompt manipulation is not a theoretical risk. The box is open.','SDxCentral, 2025','Tony Fergusson on stage at Zenith Live Encore 2025']
+  ];
+  var stage=document.getElementById('stage');
+  if(stage){
+    var shade=stage.querySelector('.stage-shade'),qw=document.getElementById('stage-quote'),qe=document.getElementById('stage-q'),qs=document.getElementById('stage-src'),pb=document.getElementById('stage-pause');
+    var els=SLIDES.map(function(s,k){
+      var d=document.createElement('div');d.className='stage-slide';
+      d.style.cssText='--fx:'+s[1]+'%;--fy:'+s[2]+'%;--z:'+s[3];
+      var im=new Image();im.src='/img/hero/'+s[0]+'.webp';im.alt=s[6];if(k>1)im.loading='lazy';
+      d.appendChild(im);stage.insertBefore(d,shade);return d;
+    });
+    var cur=-1,timer=null,tq=null;
+    function show(n){
+      var prev=cur;cur=(n+SLIDES.length)%SLIDES.length;
+      if(prev>=0)els[prev].classList.remove('on');
+      var el=els[cur];void el.offsetWidth;el.classList.add('on');
+      qw.classList.add('out');clearTimeout(tq);
+      tq=setTimeout(function(){qe.textContent=SLIDES[cur][4];qs.textContent=SLIDES[cur][5];qw.classList.remove('out');},prev<0?0:600);
+    }
+    function play(){timer=setInterval(function(){show(cur+1);},8000);}
+    show(0);play();
+    pb.addEventListener('click',function(){
+      if(timer){clearInterval(timer);timer=null;pb.textContent='Play';}
+      else{show(cur+1);play();pb.textContent='Pause';}
+    });
+  }
 
   var track = document.getElementById('ticker-track');
   if(track) {
