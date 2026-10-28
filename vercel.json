@@ -1,14 +1,16 @@
 {
-  "redirects": [
-    { "source": "/blog-2/:path*", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/articles/", "permanent": true },
-    { "source": "/contact/:path*", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "/#contact", "permanent": true },
-    { "source": "/:path((?!csz/).+)", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/:path", "permanent": false },
-    { "source": "/blog-2/:path*", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/articles/", "permanent": true },
-    { "source": "/contact/:path*", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "/#contact", "permanent": true },
-    { "source": "/:path((?!csz/).+)", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/:path", "permanent": false }
-  ],
-  "rewrites": [
-    { "source": "/", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "/csz/index.html" },
-    { "source": "/", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "/csz/index.html" }
+  "buildCommand": "node scripts/build-csz.mjs",
+  "outputDirectory": ".",
+  "routes": [
+    {"src": "^/(.*)$", "has": [{"type": "host", "value": "www.cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "https://cloudsecurityzero.com/$1"}},
+    {"src": "^/$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/index.html"},
+    {"src": "^/blog/?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/blog/index.html"},
+    {"src": "^/\\d{4}/\\d{2}/\\d{2}/([a-z0-9-]+)/?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/p/$1.html"},
+    {"src": "^/sitemap\\.xml$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/sitemap.xml"},
+    {"src": "^/robots\\.txt$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/robots.txt"},
+    {"src": "^/contact(/.*)?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/#contact"}},
+    {"src": "^/blog-2(/.*)?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/blog/"}},
+    {"src": "^/(articles/.*)$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "https://tonyfergusson.com/$1"}},
+    {"src": "^/(?!csz/|\\.well-known/).+$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/"}}
   ]
 }
