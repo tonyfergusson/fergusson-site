@@ -1,0 +1,16 @@
+{
+  "buildCommand": "node scripts/build-csz.mjs",
+  "outputDirectory": ".",
+  "routes": [
+    {"src": "^/(.*)$", "has": [{"type": "host", "value": "www.cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "https://cloudsecurityzero.com/$1"}},
+    {"src": "^/$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/index.html"},
+    {"src": "^/blog/?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/blog/index.html"},
+    {"src": "^/\\d{4}/\\d{2}/\\d{2}/([a-z0-9-]+)/?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/p/$1.html"},
+    {"src": "^/sitemap\\.xml$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/sitemap.xml"},
+    {"src": "^/robots\\.txt$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/robots.txt"},
+    {"src": "^/contact(/.*)?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/#contact"}},
+    {"src": "^/blog-2(/.*)?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/blog/"}},
+    {"src": "^/(articles/.*)$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "https://tonyfergusson.com/$1"}},
+    {"src": "^/(?!csz/|\\.well-known/).+$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/"}}
+  ]
+}
