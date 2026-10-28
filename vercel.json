@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    { "source": "/blog-2/:path*", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/articles/", "permanent": true },
+    { "source": "/contact/:path*", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "/#contact", "permanent": true },
+    { "source": "/:path((?!csz/).+)", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/:path", "permanent": false },
+    { "source": "/blog-2/:path*", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/articles/", "permanent": true },
+    { "source": "/contact/:path*", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "/#contact", "permanent": true },
+    { "source": "/:path((?!csz/).+)", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "https://tonyfergusson.com/:path", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/", "has": [{ "type": "host", "value": "cloudsecurityzero.com" }], "destination": "/csz/index.html" },
+    { "source": "/", "has": [{ "type": "host", "value": "www.cloudsecurityzero.com" }], "destination": "/csz/index.html" }
+  ]
+}
