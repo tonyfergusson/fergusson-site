@@ -8,6 +8,7 @@
     {"src": "^/\\d{4}/\\d{2}/\\d{2}/([a-z0-9-]+)/?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/p/$1.html"},
     {"src": "^/sitemap\\.xml$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/sitemap.xml"},
     {"src": "^/robots\\.txt$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/robots.txt"},
+    {"src": "^/favicon\\.(ico|svg)$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "dest": "/csz/favicon.svg"},
     {"src": "^/contact(/.*)?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/#contact"}},
     {"src": "^/blog-2(/.*)?$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "/blog/"}},
     {"src": "^/(articles/.*)$", "has": [{"type": "host", "value": "cloudsecurityzero.com"}], "status": 308, "headers": {"Location": "https://tonyfergusson.com/$1"}},
