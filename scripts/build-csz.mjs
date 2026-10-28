@@ -42,48 +42,48 @@ const posts = data.articles
 // ---- shared Cloud Security Zero chrome
 const FONT = `<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">`;
-const ICON = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F1B2D'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%23E9EDF0' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23E8A33D'/%3E%3C/svg%3E">`;
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">`;
+const ICON = `<link rel="icon" type="image/svg+xml" href="/csz/favicon.svg">`;
 const CSS = `*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--fog:#E9EDF0;--paper:#F5F7F8;--ink:#14233A;--night:#0F1B2D;--steel:#5B6B7E;--amber:#E8A33D;--rule:#C9D1D8}
-body{font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--fog)}
+:root{--fog:#FFFFFF;--paper:#F4EFE8;--ink:#222222;--night:#222222;--steel:#6B6158;--espresso:#644832;--sand:#C5B6A1;--rule:#E3DBD0}
+body{font-family:"Montserrat",system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--fog)}
 a{color:inherit}
-a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+a:focus-visible{outline:2px solid var(--espresso);outline-offset:3px;border-radius:2px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 2rem}
 header{background:var(--night);color:var(--fog)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem;padding-bottom:1.25rem}
-.mark{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-stretch:125%;font-weight:650;font-size:15px}
-.mark svg{width:26px;height:26px}
+.mark{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase}
+.mark img{width:30px;height:30px;display:block}
 header nav{display:flex;gap:1.75rem}
 header nav a{text-decoration:none;font-size:14px;opacity:.78}
 header nav a:hover{opacity:1}
 main{padding:clamp(3rem,7vw,5rem) 0 clamp(4rem,8vw,6rem)}
 .col{max-width:720px}
-h1{font-stretch:118%;font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-.015em;margin-bottom:1.25rem}
+h1{font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-.015em;margin-bottom:1.25rem}
 .meta{color:var(--steel);font-size:15px;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--rule)}
-.body{font-size:18px;line-height:1.8;color:#2A3A50}
+.body{font-size:17px;line-height:1.85;color:#3A3633}
 .body p{margin-bottom:1.4rem}
-.body h2,.body h3{font-stretch:112%;font-weight:650;color:var(--ink);margin:2.2rem 0 .8rem;font-size:22px}
+.body h2,.body h3{font-weight:600;color:var(--ink);margin:2.2rem 0 .8rem;font-size:22px}
 .body h3{font-size:19px}
-.body a{text-underline-offset:3px;text-decoration-color:var(--amber);text-decoration-thickness:2px}
+.body a{text-underline-offset:3px;text-decoration-color:var(--espresso);text-decoration-thickness:2px}
 .body ul,.body ol{margin:0 0 1.4rem 1.4rem}
 .body li{margin-bottom:.5rem}
-.body strong{font-weight:650;color:var(--ink)}
+.body strong{font-weight:600;color:var(--ink)}
 .body table{border-collapse:collapse;margin:0 0 1.4rem}
 .body td{padding:.35rem 1.25rem .35rem 0;border-bottom:1px solid var(--rule)}
 .note{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--rule);font-size:15px;color:var(--steel)}
-.note a{text-underline-offset:3px;text-decoration-color:var(--amber);text-decoration-thickness:2px}
+.note a{text-underline-offset:3px;text-decoration-color:var(--espresso);text-decoration-thickness:2px}
 .back{display:inline-block;margin-bottom:2rem;font-size:15px;text-decoration:none;color:var(--steel)}
 .back:hover{color:var(--ink)}
-.year{font-stretch:112%;font-weight:650;font-size:20px;margin:2.5rem 0 .5rem}
+.year{font-weight:600;font-size:20px;margin:2.5rem 0 .5rem}
 .list{list-style:none}
 .list li{border-top:1px solid var(--rule)}
 .list li:last-child{border-bottom:1px solid var(--rule)}
 .list a{display:flex;justify-content:space-between;gap:1.5rem;padding:1rem 0;text-decoration:none}
-.list a:hover span:first-child{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:4px}
+.list a:hover span:first-child{text-decoration:underline;text-decoration-color:var(--espresso);text-decoration-thickness:2px;text-underline-offset:4px}
 .list .d{color:var(--steel);font-size:14px;white-space:nowrap;padding-top:2px;font-variant-numeric:tabular-nums}
 .lede{color:var(--steel);max-width:52ch;margin-bottom:1rem}
-footer{background:var(--night);color:#8E9BAA;font-size:14px}
+footer{background:var(--night);color:#A39B91;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.75rem;padding-bottom:1.75rem}
 footer nav{display:flex;gap:1.5rem}
 footer a{text-decoration:none}
@@ -113,7 +113,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
 <header>
   <div class="wrap">
     <a class="mark" href="/" aria-label="Cloud Security Zero, home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="3.2"/><circle cx="16" cy="16" r="2.6" fill="#E8A33D"/></svg>
+      <img src="/csz/mark-white.svg" alt="" width="30" height="30">
       Cloud Security Zero
     </a>
     <nav aria-label="Main">
@@ -131,7 +131,7 @@ ${content}
 </main>
 <footer>
   <div class="wrap">
-    <span>© ${new Date().getFullYear()} Cloud Security Zero, Copenhagen, Denmark</span>
+    <span>© ${new Date().getFullYear()} Cloud Security Zero · Trust is a decision · Copenhagen, Denmark</span>
     <nav aria-label="Elsewhere">
       <a href="${TF}/">tonyfergusson.com</a>
       <a href="https://www.linkedin.com/in/tonyfergusson/" target="_blank" rel="noopener">LinkedIn</a>
