@@ -118,7 +118,7 @@ ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script
     </a>
     <nav aria-label="Main">
       <a href="/#approach">Approach</a>
-      <a href="/#services">Services</a>
+      <a href="/#services">What we do</a>
       <a href="/blog/">Blog</a>
       <a href="/#contact">Contact</a>
     </nav>
@@ -131,7 +131,7 @@ ${content}
 </main>
 <footer>
   <div class="wrap">
-    <span>© ${new Date().getFullYear()} Cloud Security Zero · Trust is a decision · Copenhagen, Denmark</span>
+    <span>© ${new Date().getFullYear()} Cloud Security Zero · Trust is a decision · Independent, non-profit</span>
     <nav aria-label="Elsewhere">
       <a href="${TF}/">tonyfergusson.com</a>
       <a href="https://www.linkedin.com/in/tonyfergusson/" target="_blank" rel="noopener">LinkedIn</a>
