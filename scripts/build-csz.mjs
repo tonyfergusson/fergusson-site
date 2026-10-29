@@ -49,7 +49,7 @@ const CSS = `*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Montserrat",system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--fog)}
 a{color:inherit}
 a:focus-visible{outline:2px solid var(--espresso);outline-offset:3px;border-radius:2px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 2rem}
+.wrap{max-width:1320px;margin:0 auto;padding:0 2rem}
 header{background:var(--night);color:var(--fog)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.25rem;padding-bottom:1.25rem}
 .mark{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase}
